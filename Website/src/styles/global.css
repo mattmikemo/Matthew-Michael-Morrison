@@ -1,0 +1,123 @@
+/* ----- GLOBAL STYLES ----- */
+
+html {
+    scroll-behavior: smooth;
+       /* Change default typefaces here */
+       font-family: neue-haas-grotesk-text, sans-serif;
+       -webkit-font-smoothing: antialiased;
+}
+
+/* ----- COLORS ----- */
+
+/* ----- TYPOGRAPHY ----- */
+
+:root {
+    /* Set Body and Container Widths  */
+    --body-max-width: 1920px;
+    --container-max-width: 1440px;
+    --container-max-width-narrow: 960px;
+    /* Setup Steps*/
+    --step--2: clamp(0.64rem, calc(0.59rem + 0.23vw), 0.80rem);
+    --step--1: clamp(0.80rem, calc(0.74rem + 0.29vw), 1.00rem);
+    --step-0: clamp(1.00rem, calc(0.93rem + 0.36vw), 1.25rem);
+    --step-1: clamp(1.25rem, calc(1.16rem + 0.45vw), 1.56rem);
+    --step-2: clamp(1.56rem, calc(1.45rem + 0.56vw), 1.95rem);
+    --step-3: clamp(1.95rem, calc(1.81rem + 0.70vw), 2.44rem);
+    --step-4: clamp(2.44rem, calc(2.27rem + 0.87vw), 3.05rem);
+    --step-5: clamp(3.05rem, calc(2.83rem + 1.09vw), 3.82rem);
+    --step-6: clamp(3.82rem, calc(3.54rem + 1.36vw), 4.77rem);
+    --step-7: clamp(4.77rem, calc(4.43rem + 1.70vw), 5.96rem);
+    /* Set Fonts */
+    --font-family-heading: 'neue-haas-grotesk-display', sans-serif;
+    --font-family-body: 'neue-haas-grotesk-text', sans-serif;
+  }
+  
+  /* Setup */
+
+  /* Copy & Lists */
+  p {
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-size: var(--step-0);
+    line-height: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+  ul,
+  ol {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  ul li,
+  ol li {
+    line-height: 1.5rem;
+  }
+  ul ul,
+  ol ul,
+  ul ol,
+  ol ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  blockquote {
+    line-height: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    /* Change heading typefaces here */
+    font-family: neue-haas-grotesk-display, sans-serif;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    line-height: 1.5rem;
+  }
+  h1 {
+    font-size: var(--step-5);
+    line-height: 1.5;
+    margin-top: 3rem;
+  }
+  h2 {
+    font-size: var(--step-4);
+    line-height: 3rem;
+    margin-top: 3rem;
+  }
+  h3 {
+    font-size: var(--step-3);
+  }
+  h4 {
+    font-size: var(--step-2);
+  }
+  h5 {
+    font-size: var(--step-1);
+  }
+  h6 {
+    font-size: var(--step-0);
+  }
+  /* Tables */
+  table {
+    margin-top: 1.5rem;
+    border-spacing: 0px;
+    border-collapse: collapse;
+  }
+  table td,
+  table th {
+    padding: 0;
+    line-height: 33px;
+  }
+  /* Code blocks */
+  code {
+    vertical-align: bottom;
+  }
+  /* Leading paragraph text */
+  .lead {
+    font-size: 1.414rem;
+  }
+  /* Hug the block above you */
+  .hug {
+    margin-top: 0;
+  }
