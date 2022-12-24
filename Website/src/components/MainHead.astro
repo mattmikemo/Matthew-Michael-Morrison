@@ -3,6 +3,8 @@ const {
 	title = 'Matthew Michael Morrison: Personal Hub Site',
 	description = 'The personal site of Matthew Michael Morrison.',
 } = Astro.props;
+
+
 ---
 
 <meta charset="UTF-8" />
@@ -14,3 +16,12 @@ const {
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="stylesheet" href="https://use.typekit.net/xif2zdn.css">
+<script src="https://cdn.blobity.dev/by.js?autoStart&licenseKey=..."></script>
+
+<!-- or create instance manually to provide custom options -->
+<script src="https://cdn.blobity.dev/by.js"></script>
+<script>
+    const blobity = new Blobity({
+        licenseKey: '...'
+    });
+</script>

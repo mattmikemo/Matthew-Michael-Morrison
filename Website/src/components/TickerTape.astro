@@ -1,0 +1,81 @@
+---
+// Your component script here!
+---
+<style>
+    /* scoped to the component, other H1s on the page remain the same */
+    :root {
+  --height: 100px;
+  --speed: 30s;
+}
+.ticker-tape {
+  display: flex;
+  font-family: 'neue-haas-grotesk-display', sans-serif;
+  width: 100%;
+  overflow: hidden;
+  height: var(--height);
+  padding-left: 100%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.ticker-tape .ticker {
+  height: var(--height);
+  line-height: var(--height);
+  white-space: nowrap;
+  padding-right: 100%;
+  
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: ticker;
+  -webkit-animation-duration: var(--speed);
+  
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ticker;
+  animation-duration: var(--speed);
+  
+}
+
+.ticker-tape .ticker__item {
+  display: inline-block;
+  padding: 0 1rem;
+  font-size: var(--step-2);
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  color: rgba(0,0,0,1);
+}
+
+.ticker-tape .ticker__item a {font-weight: 700; letter-spacing: 0;}
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateX(-150%);
+    transform: translateX(-150%);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateX(-150%);
+    transform: translateX(-150%);
+  }
+}
+  </style>
+  
+  <div class="ticker-tape">
+    <div class="ticker">
+      <div class="ticker__item">Welcome to the launch of my new site! Read more in depth about my design choices. <a href="#">Read More</a></div>
+      <div class="ticker__item">Welcome to the launch of my new site! Read more in depth about my design choices. <a href="#">Read More</a></div>
+      <div class="ticker__item">Welcome to the launch of my new site! Read more in depth about my design choices. <a href="#">Read More</a></div>
+    </div>
+  </div>
