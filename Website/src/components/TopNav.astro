@@ -1,15 +1,25 @@
 ---
-// Your component script here!
+import { animate } from "motion"
 ---
 <style>
     /* scoped to the component, other H1s on the page remain the same */
     .main-top-nav {height: 2rem; margin-block: 2rem; width: 100%;}
     .navigation {padding: 0.5rem; display: flex; align-items: center; justify-content: space-between; width: 80%; margin: 0 auto;}
     .site-logo, .menu-burst {width: 100px; position: relative;}
-    #Red-Burst, #Green-Burst, #Blue-Burst {position: absolute; top: 0px;}
+    #Black-Burst {position: absolute; top: -40px; scale: 1.25; transition: all 0.5s;}
+    #Red-Burst, #Green-Burst, #Blue-Burst {position: absolute; top: -40px; left: 0; bottom: 0; right: 0; mix-blend-mode: lighten; transition: all 0.5s;}
+    .menu-burst:hover #Red-Burst {left: -32px; top: -56px; filter: blur(2px);}
+    .menu-burst:hover #Green-Burst {right: -32px; top: -56px; filter: blur(2px);}
+    .menu-burst:hover #Blue-Burst {top: -16px; filter: blur(2px);}
+    .menu-burst:hover #Black-Burst {scale: 1.5;}
+    #Blue-Burst {z-index: 1;} #Green-Burst {z-index: 2;} #Red-Burst {z-index: 3;} #Black-Burst {z-index: 10;}
+
+    /* Logo Scale Animation */
+    .site-logo svg {transition: all 0.5s;}
+    .site-logo:hover svg {scale: 1.125;}
   </style>
   
-<section class="main-top-nav light-nav">
+<section client:load class="main-top-nav light-nav">
     <div class="navigation">
         <div class="site-logo">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -193,3 +203,16 @@
         </div>
     </div>
 </section>
+
+<script>
+import { animate } from "motion"
+animate(
+  "#Blue-Burst",
+  { x: [0, -100, 100, 0] },
+  {
+    duration: 2,
+    offset: [0, 0.25, 0.75]
+  }
+)
+
+</script>

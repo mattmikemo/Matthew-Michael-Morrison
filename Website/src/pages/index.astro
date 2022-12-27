@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TopNav from "../components/TopNav.astro";
 import TickerTape from "../components/TickerTape.astro"
+// or if imported from package
+import Blobity from 'blobity';
 ---
 <style>
     /* scoped to the component, other H1s on the page remain the same */
@@ -17,3 +19,10 @@ import TickerTape from "../components/TickerTape.astro"
 	</main>
 	<TickerTape></TickerTape>
 </BaseLayout>
+
+<script>
+	import Blobity from 'blobity';
+
+const options = { color: 'rgb(180, 180, 180)', dotColor: '#000000' };
+new Blobity(options);
+</script>

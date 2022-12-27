@@ -11,6 +11,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.6.11"
+    "astro": "^1.6.11",
+    "blobity": "^0.2.1",
+    "motion": "^10.15.3"
   }
 }
