@@ -2,12 +2,27 @@
 import { animate } from "motion"
 ---
 <style>
-    /* scoped to the component, other H1s on the page remain the same */
-    .main-top-nav {height: 2rem; margin-block: 2rem; width: 100%; z-index: 5;}
+	/* Input Label Container Styles */
+	input {display: none;}
+	#Burst-Menu:checked ~ .container {clip-path: circle(100%);}
+    label {z-index: 5; width: 50px; height: 50px; border-radius: 50px; position: fixed; top: 64px; right: 200px; color: black; text-align: center; display: flex; align-items: center; justify-content: center;}
+
+	/*Container Styles */
+	    /* scoped to the component, other H1s on the page remain the same */
+	.container { width: 100%; height: 100%; background: salmon; position: fixed; top: 0; right: 0; clip-path: circle(25px at 110% 8px); transition: all 500ms ease-in-out; display: flex; align-items: center; justify-content: center;}
+    .menu {display: flex; margin: 0 auto; width: 100%; justify-content: center;}
+    .column-1, .column-2 {display: flex; flex-direction: column; margin: 2rem;}
+    /* Menu Items Styles */
+    .category-heading, .category-link {font-weight: 700; font-size: var(--step-4); margin-block: 2rem; color: whitesmoke;}
+    .column-1 a, .column-2 a {margin-block: 1rem; font-size: 2rem; font-weight: 400; color: whitesmoke;}
+
+	    /* scoped to the component, other H1s on the page remain the same */
+		.main-top-nav {height: 2rem; margin-block: 2rem; width: 100%; z-index: 5; position: fixed;}
     .navigation {padding: 0.5rem; display: flex; align-items: center; justify-content: space-between; width: 80%; margin: 0 auto;}
     .site-logo, .menu-burst {width: 100px; position: relative;}
     #Black-Burst {position: absolute; top: -40px; scale: 1.25; transition: all 0.5s;}
     #Red-Burst, #Green-Burst, #Blue-Burst {position: absolute; top: -40px; left: 0; bottom: 0; right: 0; mix-blend-mode: lighten; transition: all 0.5s;}
+	.menu-burst {pointer-events: all;}
     .menu-burst:hover #Red-Burst {left: -32px; top: -56px; filter: blur(2px);}
     .menu-burst:hover #Green-Burst {right: -32px; top: -56px; filter: blur(2px);}
     .menu-burst:hover #Blue-Burst {top: -16px; filter: blur(2px);}
@@ -17,6 +32,7 @@ import { animate } from "motion"
     /* Logo Scale Animation */
     .site-logo svg {transition: all 0.5s;}
     .site-logo:hover svg {scale: 1.125;}
+
   </style>
   
 <section client:load class="main-top-nav light-nav">
@@ -165,6 +181,7 @@ import { animate } from "motion"
 </svg>
         </div>
         <div class="menu-burst">
+
             <svg version="1.1" id="Black-Burst" x="0px" y="0px"
             viewBox="0 0 101 74" style="enable-background:new 0 0 101 74;" xml:space="preserve">
                 <path d="M50.5,18.8l12.9-17l-0.4,19.4l22.7-10L72,27.9l26.5-0.3L75.4,37l23.2,9.4L72,46.1l13.6,16.7l-22.7-10l0.4,19.4l-12.9-17
@@ -204,6 +221,30 @@ import { animate } from "motion"
     </div>
 </section>
 
+<input type="checkbox" id="Burst-Menu"> 
+<label for="Burst-Menu"><i>MMM</i></label>
+<div class="container">
+    <div class="menu">
+        <div class="column-1">
+            <h4 class="category-heading">Work</h4>
+        <a href="/design">Design</a>
+        <a href="#/">Film & Video</a>
+        <a href="#/">Comics</a>
+        <a href="#/">Art</a>
+        <a href="#/" class="category-link">Blog</a>
+        </div>
+        <div class="column-2">
+            <h4 class="category-heading">About</h4>
+        <a href="#/">Me</a>
+        <a href="#/">Resume</a>
+        <a href="#/">Comyx</a>
+        <a href="#/">Common Fate</a>
+        <a href="#/" class="category-link">Contact</a>
+        </div>
+    </div>    
+</div>
+
+<!-- Motion Test - WORKING
 <script>
 import { animate } from "motion"
 animate(
@@ -216,3 +257,4 @@ animate(
 )
 
 </script>
+ -->

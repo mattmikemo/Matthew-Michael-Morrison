@@ -1,0 +1,15 @@
+---
+// Your component script here!
+---
+<style>
+    /* scoped to the component, other H1s on the page remain the same */
+    .project-card {width: 100%; margin-block: 2rem;}
+    .project-card h3 { color: red; font-weight: 500; }
+    .project-card h4 {color: blue;}
+    .project-card p {font-size: var(--step-0);}
+    .project-card img {width: 100%;}
+  </style>
+  
+  <div class="project-card">
+    <slot></slot>
+  </div>

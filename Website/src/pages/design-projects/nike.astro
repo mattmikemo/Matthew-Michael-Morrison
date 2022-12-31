@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TopNav from "../../components/TopNav.astro";
+import ProjectIntro from "../../components/ProjectIntro.astro";
+// or if imported from package
+import Blobity from 'blobity';
+---
+<style>
+    /* scoped to the component, other H1s on the page remain the same */
+	main {width: 80%; margin: 0 auto;}
+	input[type="checkbox"]:checked ~ #BlackBurst {color: aqua;}
+    /* Hero Image Styling */
+    .project-hero {
+    display: flex;
+    background-image: url("https://via.placeholder.com/1800x735");
+    width: 100%;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    align-items: center;
+    justify-content: center;
+}
+  </style>
+
+<BaseLayout>
+	<TopNav></TopNav>
+    <div class="project-hero" id="nike-hero"><img src="https://via.placeholder.com/1800x800"></div>
+    
+	<main>
+        <ProjectIntro>
+            <h1 slot="project-title"> This is a Test Title</h1>
+            <p slot="project-intro"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iste cupiditate ea beatae molestias at recusandae maiores fugit laborum a velit atque eius voluptatum porro, tenetur deleniti numquam est voluptas, natus ducimus magnam officia quo. Sunt, dolorem maxime beatae sint, blanditiis pariatur alias dicta repellendus totam ex ipsa laboriosam dolorum. </p>
+            <h6 slot="project-credits">Test Credit: Matthew Morrison</h6>
+        </ProjectIntro>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut illo, mollitia voluptates totam soluta accusantium quia possimus impedit. Assumenda, odio doloremque modi, reiciendis laborum nobis, perspiciatis dicta voluptatum placeat quo aliquam neque culpa sed quas! Beatae quas eius sunt nulla nam, ipsa ducimus officiis officia nostrum! Consequuntur laudantium voluptates eos, perferendis error maiores adipisci necessitatibus eveniet quae amet impedit porro alias est fuga ea explicabo, facere repellendus. Similique aliquid quasi quis soluta animi repellat optio repudiandae tenetur voluptatum corrupti repellendus quaerat nulla, voluptatem quos! Maiores veritatis numquam sint mollitia consequatur distinctio vitae illo voluptatem, iste sequi ullam architecto asperiores! Quas.</p>
+	</main>
+</BaseLayout>
+
+<script>
+	import Blobity from 'blobity';
+
+const options = { color: 'rgb(180, 180, 180)', dotColor: '#000000', dotSize: '12' };
+new Blobity(options);
+</script>

@@ -13,6 +13,7 @@
   "dependencies": {
     "astro": "^1.6.11",
     "blobity": "^0.2.1",
-    "motion": "^10.15.3"
+    "motion": "^10.15.3",
+    "wheelz": "^1.0.4"
   }
 }

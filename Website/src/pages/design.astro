@@ -1,0 +1,112 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TopNav from "../components/TopNav.astro";
+import FullMenu from "../components/FullMenu.astro";
+import TickerTape from "../components/TickerTape.astro"
+// or if imported from package
+import Blobity from 'blobity';
+import ProjectCard from "../components/ProjectCard.astro";
+
+// import needed modules from npm
+import Wheelz from 'wheelz';
+
+---
+<style>
+    /* scoped to the component, other H1s on the page remain the same */
+	main {width: 80%; margin: 0 auto; padding-block: 10rem;}
+    .Home-Intro {text-align: center; font-family: neue-haas-grotesk-display, sans-serif;
+    font-size: var(--step-4); margin-block: 120px; }
+	input[type="checkbox"]:checked ~ #BlackBurst {color: aqua;}
+    /* Project Cards Styles */
+    body {transition: all 500ms;}
+    .project {width: 50%;}
+    .project img {margin-block: 1rem;}
+    .project h3 {font-weight: 600; margin: 1.5rem;} .project h4 {margin: 1.5rem;} .project p {margin-inline: 1.5rem;}
+    #project-1, #project-3, #project-5, #project-7, #project-9 {float: left; clear: right;}
+    #project-2, #project-4, #project-6, #project-8, #project-10 {clear: left; float: right;}
+  </style>
+
+<BaseLayout>
+	<TopNav></TopNav>
+	<main id="main">
+        <div class="project" id="project-1">
+        <ProjectCard title="Google">
+            <a href="#/">
+                <img src="https://via.placeholder.com/1000x560">
+                    <h3>Google Fit+</h3>
+                    <h4>UI/UX, Product Design, Concept</h4>
+                        <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
+            </a>
+        </ProjectCard>
+        </div>
+        <div class="project" id="project-2">
+        <ProjectCard title="Nike">
+            <a href="/design-projects/nike">
+                <img src="https://via.placeholder.com/1000x560">
+                    <h3>Nike Store</h3>
+                    <h4>Branding, UI/UX, Product Design, Concept</h4>
+                        <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
+            </a>
+        </ProjectCard>
+        </div>
+        <div class="project" id="project-3">
+            <ProjectCard title="example3">
+                <a href="#/">
+                    <img src="https://via.placeholder.com/1350x1800">
+                        <h3>Test Title of Project</h3>
+                        <h4>Added Subtitle for the Project</h4>
+                            <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
+                </a>
+            </ProjectCard>
+            </div>
+            <div class="project" id="project-4">
+            <ProjectCard title="example4">
+                <a href="#/">
+                    <img src="https://via.placeholder.com/1000x560">
+                        <h3>Test Title of Project</h3>
+                        <h4>Added Subtitle for the Project</h4>
+                            <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
+                </a>
+            </ProjectCard>
+            </div>
+            <div class="project" id="project-5">
+                <ProjectCard title="example5">
+                    <a href="#/">
+                        <img src="https://via.placeholder.com/1000x560">
+                            <h3>Test Title of Project</h3>
+                            <h4>Added Subtitle for the Project</h4>
+                                <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
+                    </a>
+                </ProjectCard>
+                </div>
+                <div class="project" id="project-6">
+                <ProjectCard title="example6">
+                    <a href="#/">
+                        <img src="https://via.placeholder.com/1000x560">
+                            <h3>Test Title of Project</h3>
+                            <h4>Added Subtitle for the Project</h4>
+                                <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
+                    </a>
+                </ProjectCard>
+                </div>
+
+	</main>
+</BaseLayout>
+
+<script>
+	import Blobity from 'blobity';
+
+const options = { color: 'rgb(180, 180, 180)', dotColor: '#000000', dotSize: '12' };
+new Blobity(options);
+</script>
+
+<script>
+    document.getElementById("project-1").addEventListener("mouseover", function() {
+    document.getElementById("body").style.backgroundColor = "salmon";
+});
+</script>
+
+<script>
+var options = { option: "value" }
+var wheelz = new Wheelz(options);
+</script>
