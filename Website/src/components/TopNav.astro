@@ -5,7 +5,7 @@ import { animate } from "motion"
 	/* Input Label Container Styles */
 	input {display: none;}
 	#Burst-Menu:checked ~ .container {clip-path: circle(100%);}
-    label {z-index: 5; width: 50px; height: 50px; border-radius: 50px; position: fixed; top: 64px; right: 200px; color: black; text-align: center; display: flex; align-items: center; justify-content: center;}
+    label {z-index: 5; width: 50px; height: 50px; border-radius: 50px; position: fixed; top: 64px; right: 200px; color: #ffffff00; text-align: center; display: flex; align-items: center; justify-content: center;}
 
 	/*Container Styles */
 	    /* scoped to the component, other H1s on the page remain the same */
@@ -17,7 +17,7 @@ import { animate } from "motion"
     .column-1 a, .column-2 a {margin-block: 1rem; font-size: 2rem; font-weight: 400; color: whitesmoke;}
 
 	    /* scoped to the component, other H1s on the page remain the same */
-		.main-top-nav {height: 2rem; margin-block: 2rem; width: 100%; z-index: 5; position: fixed;}
+		.main-top-nav {height: 2rem; margin-block: 2rem; width: 100%; z-index: 5; position: fixed; transition: all 500ms;}
     .navigation {padding: 0.5rem; display: flex; align-items: center; justify-content: space-between; width: 80%; margin: 0 auto;}
     .site-logo, .menu-burst {width: 100px; position: relative;}
     #Black-Burst {position: absolute; top: -40px; scale: 1.25; transition: all 0.5s;}
@@ -33,9 +33,16 @@ import { animate } from "motion"
     .site-logo svg {transition: all 0.5s;}
     .site-logo:hover svg {scale: 1.125;}
 
+	/* Hide the Navigation Bar on Scroll */
+	section {--nav-height: 200px;}
+	.nav--hidden {
+  transform: translateY(calc(-1 * var(--nav-height)));
+  box-shadow: none;
+}
+
   </style>
   
-<section client:load class="main-top-nav light-nav">
+<section client:load class="main-top-nav light-nav" id="top-nav">
     <div class="navigation">
         <div class="site-logo">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -243,6 +250,25 @@ import { animate } from "motion"
         </div>
     </div>    
 </div>
+	
+<script is:inline>
+// Enable hidden nav bar
+{
+  const nav = document.querySelector(".main-top-nav");
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    if (lastScrollY < window.scrollY) {
+      nav.classList.add("nav--hidden");
+    } else {
+      nav.classList.remove("nav--hidden");
+    }
+
+    lastScrollY = window.scrollY;
+  });
+}
+
+</script>
 
 <!-- Motion Test - WORKING
 <script>

@@ -1,0 +1,17 @@
+---
+// Your component script here!
+---
+<style>
+    /* scoped to the component, other H1s on the page remain the same */
+    .project-preview {padding-block: 2rem;}
+    .preview-item {border-bottom: solid black 1px;}
+  </style>
+  
+  <section id="project-preview">
+    <div class="project-preview-wrapper">
+        <div class="preview-item" id="project-item-1"><slot name="project-1"></slot></div>
+        <div class="preview-item" id="project-item-2"><slot name="project-2"></slot></div>
+        <div class="preview-item" id="project-item-3"><slot name="project-3"></slot></div>
+        <div class="preview-item" id="project-item-4"><slot name="project-4"></slot></div>
+    </div>
+  </section>

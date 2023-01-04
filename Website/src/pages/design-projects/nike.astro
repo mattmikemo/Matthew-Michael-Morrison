@@ -2,10 +2,14 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TopNav from "../../components/TopNav.astro";
 import ProjectIntro from "../../components/ProjectIntro.astro";
+import Footer from "../../components/Footer.astro";
+import BacktoTop from "../../components/BacktoTop.astro";
+import ProjectPreview from "../../components/ProjectPreview.astro";
 // or if imported from package
 import Blobity from 'blobity';
 ---
 <style>
+    .project-img {width: 100%; margin: 1rem;}
     /* scoped to the component, other H1s on the page remain the same */
 	main {width: 80%; margin: 0 auto;}
 	input[type="checkbox"]:checked ~ #BlackBurst {color: aqua;}
@@ -20,21 +24,57 @@ import Blobity from 'blobity';
     background-attachment: fixed;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2rem;
 }
+
+ .mobile-img-row {display: flex;}
+
+ /* Typography Styles */
+ h1.project-title {font-weight: 700; margin-inline: 1rem;}
+ p.project-intro {font-size: var(--step-1); font-weight: 200; line-height: 1.35;}
+ .body {line-height: 1.5; margin: 1rem;}
+ .credits-headline  {font-weight: 700;}
+ .job-title  {font-weight: 500; font-style: italic;}
+ .person-name {margin-top: 0.5rem;}
+ .project-titlee
   </style>
 
 <BaseLayout>
 	<TopNav></TopNav>
-    <div class="project-hero" id="nike-hero"><img src="https://via.placeholder.com/1800x800"></div>
+    <div class="project-hero" id="nike-hero"><img src="/public/images/Projects/nike/Nike-Project-Hero.jpg"></div>
     
 	<main>
         <ProjectIntro>
-            <h1 slot="project-title"> This is a Test Title</h1>
-            <p slot="project-intro"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iste cupiditate ea beatae molestias at recusandae maiores fugit laborum a velit atque eius voluptatum porro, tenetur deleniti numquam est voluptas, natus ducimus magnam officia quo. Sunt, dolorem maxime beatae sint, blanditiis pariatur alias dicta repellendus totam ex ipsa laboriosam dolorum. </p>
-            <h6 slot="project-credits">Test Credit: Matthew Morrison</h6>
+            <h1 slot="project-title" class="project-title"> Nike Store Concept</h1>
+            <p slot="project-intro" class="project-intro"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iste cupiditate ea beatae molestias at recusandae maiores fugit laborum a velit atque eius voluptatum porro, tenetur deleniti numquam est voluptas, natus ducimus magnam officia quo. Sunt, dolorem maxime beatae sint, blanditiis pariatur alias dicta repellendus totam ex ipsa laboriosam dolorum. </p>
+            <h6 slot="project-credits"  class="credits-headline">Scope</h6>
+            <h6 slot="project-credits">-Typography and Color </h6>
+            <h6 slot="project-credits"  class="credits-headline">Credits</h6>
+            <h6 slot="project-credits" class="job-title">Designer</h6>
+            <h6 slot="project-credits" class="person-name">Matthew Michael Morrison</h6>
+
         </ProjectIntro>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut illo, mollitia voluptates totam soluta accusantium quia possimus impedit. Assumenda, odio doloremque modi, reiciendis laborum nobis, perspiciatis dicta voluptatum placeat quo aliquam neque culpa sed quas! Beatae quas eius sunt nulla nam, ipsa ducimus officiis officia nostrum! Consequuntur laudantium voluptates eos, perferendis error maiores adipisci necessitatibus eveniet quae amet impedit porro alias est fuga ea explicabo, facere repellendus. Similique aliquid quasi quis soluta animi repellat optio repudiandae tenetur voluptatum corrupti repellendus quaerat nulla, voluptatem quos! Maiores veritatis numquam sint mollitia consequatur distinctio vitae illo voluptatem, iste sequi ullam architecto asperiores! Quas.</p>
+        <div class="p2"></div>
+                <img class="project-img" src="/public/images/Projects/nike/Nike-Home-Screen-Hero.jpg">
+                <img class="project-img" src="/public/images/Projects/nike/Nike-Product-Page.jpg">
+                <img class="project-img" src="/public/images/Projects/nike/Nike-Home-Card-2.jpg">
+                <img class="project-img" src="/public/images/Projects/nike/Nike-Footer.jpg">
+            <div class="mobile-img-row">
+                <img class="project-img" src="/public/images/Projects/nike/Nike-Product-Page-Mobile.jpg">
+                <img class="project-img" src="/public/images/Projects/nike/Nike-Shopping-Items-Mobile.jpg">
+                <img class="project-img" src="/public/images/Projects/nike/Nike-Footer-Mobile.jpg">
+            </div>
+            <img class="project-img" src="/public/images/Projects/nike/Nike-Shopping-Page.jpg">
+        <p class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut illo, mollitia voluptates totam soluta accusantium quia possimus impedit. Assumenda, odio doloremque modi, reiciendis laborum nobis, perspiciatis dicta voluptatum placeat quo aliquam neque culpa sed quas! Beatae quas eius sunt nulla nam, ipsa ducimus officiis officia nostrum! Consequuntur laudantium voluptates eos, perferendis error maiores adipisci necessitatibus eveniet quae amet impedit porro alias est fuga ea explicabo, facere repellendus. Similique aliquid quasi quis soluta animi repellat optio repudiandae tenetur voluptatum corrupti repellendus quaerat nulla, voluptatem quos! Maiores veritatis numquam sint mollitia consequatur distinctio vitae illo voluptatem, iste sequi ullam architecto asperiores! Quas.</p>
+        <ProjectPreview>
+            <h4 slot="project-1" class="project-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-2" class="project-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-3" class="project-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-4" class="project-title"> Lorem Ipsum Project Title</h4>
+        </ProjectPreview>
 	</main>
+    <BacktoTop></BacktoTop>
+    <Footer></Footer>
 </BaseLayout>
 
 <script>
