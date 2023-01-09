@@ -16,18 +16,20 @@ import Blobity from 'blobity';
     /* Hero Image Styling */
     .project-hero {
     display: flex;
-    background-image: url("https://via.placeholder.com/1800x735");
+    background-image: url("/public/images/Projects/nike/Nike-Project-Hero.jpg");
     width: 100%;
+    min-height: 50em;
     align-self: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background-position: center;
     align-items: center;
     justify-content: center;
     margin-bottom: 2rem;
 }
 
- .mobile-img-row {display: flex;}
+ .mobile-img-row {display: flex; width: 100%; height: auto; margin: 1rem; justify-items: auto; justify-content: space-around;}
+ .mobile-img-row  img {height: auto;}
 
  /* Typography Styles */
  h1.project-title {font-weight: 700; margin-inline: 1rem;}
@@ -36,12 +38,18 @@ import Blobity from 'blobity';
  .credits-headline  {font-weight: 700;}
  .job-title  {font-weight: 500; font-style: italic;}
  .person-name {margin-top: 0.5rem;}
- .project-titlee
+ .project-preview-title {margin-inline: 1rem; margin-block: 2rem; font-size: var(--step-2); font-weight: 700;}
+
+ /* MOBILE */
+@media screen and (max-width: 600px) {
+	main {width: 90%;}
+}
+ 
   </style>
 
 <BaseLayout>
 	<TopNav></TopNav>
-    <div class="project-hero" id="nike-hero"><img src="/public/images/Projects/nike/Nike-Project-Hero.jpg"></div>
+    <div class="project-hero" id="nike-hero"></div>
     
 	<main>
         <ProjectIntro>
@@ -60,17 +68,16 @@ import Blobity from 'blobity';
                 <img class="project-img" src="/public/images/Projects/nike/Nike-Home-Card-2.jpg">
                 <img class="project-img" src="/public/images/Projects/nike/Nike-Footer.jpg">
             <div class="mobile-img-row">
-                <img class="project-img" src="/public/images/Projects/nike/Nike-Product-Page-Mobile.jpg">
-                <img class="project-img" src="/public/images/Projects/nike/Nike-Shopping-Items-Mobile.jpg">
-                <img class="project-img" src="/public/images/Projects/nike/Nike-Footer-Mobile.jpg">
+                <img class="" src="/public/images/Projects/nike/Nike-Product-Page-Mobile.jpg">
+                <img class="" src="/public/images/Projects/nike/Nike-Shopping-Items-Mobile.jpg">
+                <img class="" src="/public/images/Projects/nike/Nike-Footer-Mobile.jpg">
             </div>
             <img class="project-img" src="/public/images/Projects/nike/Nike-Shopping-Page.jpg">
-        <p class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut illo, mollitia voluptates totam soluta accusantium quia possimus impedit. Assumenda, odio doloremque modi, reiciendis laborum nobis, perspiciatis dicta voluptatum placeat quo aliquam neque culpa sed quas! Beatae quas eius sunt nulla nam, ipsa ducimus officiis officia nostrum! Consequuntur laudantium voluptates eos, perferendis error maiores adipisci necessitatibus eveniet quae amet impedit porro alias est fuga ea explicabo, facere repellendus. Similique aliquid quasi quis soluta animi repellat optio repudiandae tenetur voluptatum corrupti repellendus quaerat nulla, voluptatem quos! Maiores veritatis numquam sint mollitia consequatur distinctio vitae illo voluptatem, iste sequi ullam architecto asperiores! Quas.</p>
         <ProjectPreview>
-            <h4 slot="project-1" class="project-title"> Lorem Ipsum Project Title</h4>
-            <h4 slot="project-2" class="project-title"> Lorem Ipsum Project Title</h4>
-            <h4 slot="project-3" class="project-title"> Lorem Ipsum Project Title</h4>
-            <h4 slot="project-4" class="project-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-1" class="project-preview-title"> AT&T Believe Social Campaign</h4>
+            <h4 slot="project-2" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-3" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-4" class="project-preview-title"> Lorem Ipsum Project Title</h4>
         </ProjectPreview>
 	</main>
     <BacktoTop></BacktoTop>
