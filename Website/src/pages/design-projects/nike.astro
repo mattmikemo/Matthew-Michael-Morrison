@@ -9,7 +9,7 @@ import ProjectPreview from "../../components/ProjectPreview.astro";
 import Blobity from 'blobity';
 ---
 <style>
-    .project-img {width: 100%; margin: 1rem;}
+    .project-img {width: 100%; margin-block: 1rem;}
     /* scoped to the component, other H1s on the page remain the same */
 	main {width: 80%; margin: 0 auto;}
 	input[type="checkbox"]:checked ~ #BlackBurst {color: aqua;}
@@ -33,7 +33,7 @@ import Blobity from 'blobity';
 
  /* Typography Styles */
  h1.project-title {font-weight: 700; margin-inline: 1rem;}
- p.project-intro {font-size: var(--step-1); font-weight: 200; line-height: 1.35;}
+ p.project-intro {font-size: var(--step-1); font-weight: 200; line-height: 1.5;}
  .body {line-height: 1.5; margin: 1rem;}
  .credits-headline  {font-weight: 700;}
  .job-title  {font-weight: 500; font-style: italic;}
@@ -43,6 +43,7 @@ import Blobity from 'blobity';
  /* MOBILE */
 @media screen and (max-width: 600px) {
 	main {width: 90%;}
+    h1.project-title {margin: 0;}
 }
  
   </style>
@@ -67,10 +68,10 @@ import Blobity from 'blobity';
                 <img class="project-img" src="/public/images/Projects/nike/Nike-Product-Page.jpg">
                 <img class="project-img" src="/public/images/Projects/nike/Nike-Home-Card-2.jpg">
                 <img class="project-img" src="/public/images/Projects/nike/Nike-Footer.jpg">
-            <div class="mobile-img-row">
-                <img class="" src="/public/images/Projects/nike/Nike-Product-Page-Mobile.jpg">
-                <img class="" src="/public/images/Projects/nike/Nike-Shopping-Items-Mobile.jpg">
-                <img class="" src="/public/images/Projects/nike/Nike-Footer-Mobile.jpg">
+            <div class="grid-wrapper-min-max">
+                <img class="grid-item" src="/public/images/Projects/nike/Nike-Product-Page-Mobile.jpg">
+                <img class="grid-item" src="/public/images/Projects/nike/Nike-Shopping-Items-Mobile.jpg">
+                <img class="grid-item" src="/public/images/Projects/nike/Nike-Footer-Mobile.jpg">
             </div>
             <img class="project-img" src="/public/images/Projects/nike/Nike-Shopping-Page.jpg">
         <ProjectPreview>
