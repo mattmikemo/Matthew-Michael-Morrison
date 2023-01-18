@@ -5,8 +5,7 @@ import ProjectIntro from "../../components/ProjectIntro.astro";
 import Footer from "../../components/Footer.astro";
 import BacktoTop from "../../components/BacktoTop.astro";
 import ProjectPreview from "../../components/ProjectPreview.astro";
-// or if imported from package
-import Blobity from 'blobity';
+import IntersectionObserver from "../../components/IntersectionObserver.astro";
 ---
 <style>
     .project-img {width: 100%; margin-block: 1rem;}
@@ -28,9 +27,6 @@ import Blobity from 'blobity';
     margin-bottom: 2rem;
 }
 
- .mobile-img-row {display: flex; width: 100%; height: auto; margin: 1rem; justify-items: auto; justify-content: space-around;}
- .mobile-img-row  img {height: auto;}
-
  /* Typography Styles */
  h1.project-title {font-weight: 700; margin-inline: 1rem;}
  p.project-intro {font-size: var(--step-1); font-weight: 200; line-height: 1.5;}
@@ -43,7 +39,11 @@ import Blobity from 'blobity';
  /* MOBILE */
 @media screen and (max-width: 600px) {
 	main {width: 90%;}
-    h1.project-title {margin: 0;}
+    h1.project-title {margin: 0; font-size: var(--step-6);}
+    p.project-intro {font-size: var(--step-2);}
+    .credits-headline  {font-weight: 700; font-size: var(--step-2); margin-block: 1.75rem;}
+    .job-title  {font-weight: 500; font-style: italic; font-size: var(--step-2);}
+    .person-name, .scope-details {font-size: var(--step-2);}
 }
  
   </style>
@@ -52,28 +52,28 @@ import Blobity from 'blobity';
 	<TopNav></TopNav>
     <div class="project-hero" id="nike-hero"></div>
     
-	<main>
+	<main class="main">
         <ProjectIntro>
             <h1 slot="project-title" class="project-title"> Nike Store Concept</h1>
             <p slot="project-intro" class="project-intro"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iste cupiditate ea beatae molestias at recusandae maiores fugit laborum a velit atque eius voluptatum porro, tenetur deleniti numquam est voluptas, natus ducimus magnam officia quo. Sunt, dolorem maxime beatae sint, blanditiis pariatur alias dicta repellendus totam ex ipsa laboriosam dolorum. </p>
             <h6 slot="project-credits"  class="credits-headline">Scope</h6>
-            <h6 slot="project-credits">-Typography and Color </h6>
+            <h6 slot="project-credits" class="scope-details">-Typography and Color </h6>
             <h6 slot="project-credits"  class="credits-headline">Credits</h6>
             <h6 slot="project-credits" class="job-title">Designer</h6>
             <h6 slot="project-credits" class="person-name">Matthew Michael Morrison</h6>
 
         </ProjectIntro>
         <div class="p2"></div>
-                <img class="project-img" src="/public/images/Projects/nike/Nike-Home-Screen-Hero.jpg">
-                <img class="project-img" src="/public/images/Projects/nike/Nike-Product-Page.jpg">
-                <img class="project-img" src="/public/images/Projects/nike/Nike-Home-Card-2.jpg">
-                <img class="project-img" src="/public/images/Projects/nike/Nike-Footer.jpg">
+                <img class="project-img fade-in" src="/public/images/Projects/nike/Nike-Home-Screen-Hero.jpg">
+                <img class="project-img fade-in" src="/public/images/Projects/nike/Nike-Product-Page.jpg">
+                <img class="project-img fade-in" src="/public/images/Projects/nike/Nike-Home-Card-2.jpg">
+                <img class="project-img fade-in" src="/public/images/Projects/nike/Nike-Footer.jpg">
             <div class="grid-wrapper-min-max">
-                <img class="grid-item" src="/public/images/Projects/nike/Nike-Product-Page-Mobile.jpg">
-                <img class="grid-item" src="/public/images/Projects/nike/Nike-Shopping-Items-Mobile.jpg">
-                <img class="grid-item" src="/public/images/Projects/nike/Nike-Footer-Mobile.jpg">
+                <img class="grid-item fade-in" src="/public/images/Projects/nike/Nike-Product-Page-Mobile.jpg">
+                <img class="grid-item fade-in" src="/public/images/Projects/nike/Nike-Shopping-Items-Mobile.jpg">
+                <img class="grid-item fade-in" src="/public/images/Projects/nike/Nike-Footer-Mobile.jpg">
             </div>
-            <img class="project-img" src="/public/images/Projects/nike/Nike-Shopping-Page.jpg">
+            <img class="project-img fade-in" src="/public/images/Projects/nike/Nike-Shopping-Page.jpg">
         <ProjectPreview>
             <h4 slot="project-1" class="project-preview-title"> AT&T Believe Social Campaign</h4>
             <h4 slot="project-2" class="project-preview-title"> Lorem Ipsum Project Title</h4>
@@ -81,6 +81,7 @@ import Blobity from 'blobity';
             <h4 slot="project-4" class="project-preview-title"> Lorem Ipsum Project Title</h4>
         </ProjectPreview>
 	</main>
+    <IntersectionObserver></IntersectionObserver>
     <BacktoTop></BacktoTop>
     <Footer></Footer>
 </BaseLayout>
@@ -90,4 +91,9 @@ import Blobity from 'blobity';
 
 const options = { color: 'rgb(180, 180, 180)', dotColor: '#000000', dotSize: '12' };
 new Blobity(options);
+</script>
+
+<script>
+    import Swup from 'swup';
+const swup = new Swup(); // only this line when included with script tag
 </script>
