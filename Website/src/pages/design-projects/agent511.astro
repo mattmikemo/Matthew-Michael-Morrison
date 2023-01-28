@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TopNav from "../../components/TopNav.astro";
+import ProjectIntro from "../../components/ProjectIntro.astro";
+import Footer from "../../components/Footer.astro";
+import BacktoTop from "../../components/BacktoTop.astro";
+import ProjectPreview from "../../components/ProjectPreview.astro";
+import IntersectionObserver from "../../components/IntersectionObserver.astro";
+---
+<style>
+    .project-img {width: 100%; margin-block: 1rem;}
+    /* scoped to the component, other H1s on the page remain the same */
+	main {width: 80%; margin: 0 auto;}
+	input[type="checkbox"]:checked ~ #BlackBurst {color: aqua;}
+    /* Hero Image Styling */
+    .project-hero {
+    display: flex;
+    background-image: url("/public/images/Projects/Agent-511/Agent-511-Project-Hero.jpg");
+    width: 100%;
+    min-height: 50em;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+ /* Typography Styles */
+ h1.project-title {font-weight: 700; margin-inline: 1rem;}
+ p.project-intro {font-size: var(--step-1); font-weight: 200; line-height: 1.5;}
+ .body {line-height: 1.5; margin: 1rem;}
+ .credits-headline  {font-weight: 700;}
+ .job-title  {font-weight: 900; font-style: italic;}
+ .person-name {margin-top: 0.5rem;}
+ .project-preview-title {margin-inline: 1rem; margin-block: 2rem; font-size: var(--step-2); font-weight: 700;}
+
+ /* MOBILE */
+@media screen and (max-width: 600px) {
+	main {width: 90%;}
+    h1.project-title {margin: 0; font-size: var(--step-6);}
+    p.project-intro {font-size: var(--step-2);}
+    .credits-headline  {font-weight: 700; font-size: var(--step-2); margin-block: 2rem;}
+    .job-title  {font-weight: 900; font-style: italic; font-size: var(--step-2); margin-bottom: 1rem;}
+    .person-name, .scope-details {font-size: var(--step-2);}
+    .person-name {margin-bottom: 2rem;}
+}   .scope-details {margin-bottom: 4rem;}
+ 
+  </style>
+
+<BaseLayout>
+	<TopNav></TopNav>
+    <div class="project-hero" id="nike-hero"></div>
+    
+	<main class="main">
+        <ProjectIntro>
+            <h1 slot="project-title" class="project-title"> Agent 511</h1>
+            <p slot="project-intro" class="project-intro">AGENT511 is an industry leader in mobile technology and customer contact center communications, providing their clients with a seamless experience through their robust, integrated platform.</p>
+            <p slot="project-intro" class="project-intro">AGENT511 wanted to redesign their website to address client needs as well as align to their future goals as a company. The objective, through design, was to visually represent what the technology could do in a digestible manner for their audiences while creating a look and feel that was calming and inviting. Each designer created their own unique art direction to present to the client.</p>
+            <p slot="project-intro" class="project-intro">This unused concept captures those goals. The flow of the page illustrates the functionality of the technology while the soft gradient icons with the blues evoke a calming and soft look and feel for the page.</p>
+            <h6 slot="project-credits"  class="credits-headline">SCOPE</h6>
+            <h6 slot="project-credits" class="scope-details">-Branding and Web Design</h6>
+            <h6 slot="project-credits"  class="credits-headline">CREDITS</h6>
+            <h6 slot="project-credits" class="job-title">Creative Director</h6>
+            <h6 slot="project-credits" class="person-name">Amy Schwartz</h6>
+            <h6 slot="project-credits" class="job-title">Art Director & Designer</h6>
+            <h6 slot="project-credits" class="person-name">Matthew Michael Morrison</h6>
+            <h6 slot="project-credits" class="job-title">Art Director & Designer</h6>
+            <h6 slot="project-credits" class="person-name">Greer Mosher</h6>
+            <h6 slot="project-credits" class="job-title">Art Director & Designer</h6>
+            <h6 slot="project-credits" class="person-name">Hemza Hajyousif</h6>
+        </ProjectIntro>
+
+        <div class="p3"></div>
+                <img class="project-img fade-in" src="/public/images/Projects/Agent-511/Agent-511-Homepage-Design.jpg">
+
+        <ProjectPreview>
+            <h4 slot="project-1" class="project-preview-title"> AT&T Believe Social Campaign</h4>
+            <h4 slot="project-2" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-3" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-4" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+        </ProjectPreview>
+	</main>
+    <IntersectionObserver></IntersectionObserver>
+    <BacktoTop></BacktoTop>
+    <Footer></Footer>
+</BaseLayout>
+
+<script>
+	import Blobity from 'blobity';
+
+const options = { color: 'rgb(180, 180, 180)', dotColor: '#000000', dotSize: '12' };
+new Blobity(options);
+</script>
+
+<script>
+    import Swup from 'swup';
+const swup = new Swup(); // only this line when included with script tag
+</script>
