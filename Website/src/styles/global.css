@@ -1,5 +1,7 @@
 /* ----- GLOBAL STYLES ----- */
 
+body {--content-load-delay: 500ms;}
+
 html {
     scroll-behavior: smooth;
        /* Change default typefaces here */
@@ -7,7 +9,21 @@ html {
        -webkit-font-smoothing: antialiased;
 }
 
-main {max-width: 1440px;}
+main {
+  max-width: 1440px;
+  animation: content-load 555ms ease-in;
+}
+
+/* CONTENT LOAD ANIMATION */
+
+@keyframes content-load {
+  0% {
+      transform: translateY(40px); opacity: 0;
+  }
+  100% {
+    transform: translateY(0px); opacity: 1;
+  }
+}
 
 /* ----- COLORS ----- */
 

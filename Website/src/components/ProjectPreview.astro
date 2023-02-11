@@ -1,5 +1,6 @@
 ---
 const {url} = Astro.props
+const { source1, source2, source, source4} = Astro.props;
 ---
 <style>
     /* scoped to the component, other H1s on the page remain the same */
@@ -12,9 +13,9 @@ const {url} = Astro.props
   <section id="project-preview">
     <div class="project-preview-wrapper">
         <h3>See More Projects</h3>
-        <div class="preview-item" id="project-item-1"><a href="{url}"><slot name="project-1"></slot></a></div>
-        <div class="preview-item" id="project-item-2"><slot name="project-2"></slot></div>
-        <div class="preview-item" id="project-item-3"><slot name="project-3"></slot></div>
-        <div class="preview-item last-item" id="project-item-4"><slot name="project-4"></slot></div>
+        <div class="preview-item" id="project-item-1"><a href="{url}"><slot name="project-1"></slot><img src="{source1}"></a></div>
+        <div class="preview-item" id="project-item-2"><a href="{url}"><slot name="project-2"></slot><img src="{source2}"></a></div>
+        <div class="preview-item" id="project-item-3"><a href="{url}"><slot name="project-3"></slot><img src="{source3}"></a></div>
+        <div class="preview-item last-item" id="project-item-4"><a href="{url}"><slot name="project-4"></slot><img src="{source4}"></a></div>
     </div>
   </section>

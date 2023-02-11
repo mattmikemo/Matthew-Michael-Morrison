@@ -3,8 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TopNav from "../components/TopNav.astro";
 import FullMenu from "../components/FullMenu.astro";
 import TickerTape from "../components/TickerTape.astro"
-// or if imported from package
-import Blobity from 'blobity';
 import ProjectCard from "../components/ProjectCard.astro";
 
 // import needed modules from npm
@@ -25,11 +23,12 @@ import Wheelz from 'wheelz';
     .project h4 {line-height: 1.25;}
     #project-1, #project-3, #project-5, #project-7, #project-9 {float: left; clear: right;}
     #project-2, #project-4, #project-6, #project-8, #project-10 {clear: left; float: right;}
+    Body#project-2:hover {background-color: aqua;}
   </style>
 
 <BaseLayout>
 	<TopNav></TopNav>
-	<main id="main">
+	<main id="wheelz">
         <div class="project" id="project-1">
         <ProjectCard title="Loyola">
             <a href="/design-projects/loyola">
@@ -95,19 +94,18 @@ import Wheelz from 'wheelz';
 </BaseLayout>
 
 <script>
-	import Blobity from 'blobity';
-
-const options = { color: 'rgb(180, 180, 180)', dotColor: '#000000', dotSize: '12' };
-new Blobity(options);
-</script>
-
-<script>
+    //Project 1
     document.getElementById("project-1").addEventListener("mouseover", function() {
-    document.getElementById("body").style.backgroundColor = "salmon";
+    document.getElementById("body").style.backgroundColor = "#8d0034";
 });
-</script>
-
-<script>
-var options = { option: "value" }
-var wheelz = new Wheelz(options);
+    document.getElementById("project-1").addEventListener("mouseout", function() {
+    document.getElementById("body").style.backgroundColor = "white";
+});
+    //Project 2
+    document.getElementById("project-2").addEventListener("mouseover", function() {
+    document.getElementById("body").style.backgroundColor = "#9bedff";
+});
+    document.getElementById("project-2").addEventListener("mouseout", function() {
+    document.getElementById("body").style.backgroundColor = "white";
+});
 </script>

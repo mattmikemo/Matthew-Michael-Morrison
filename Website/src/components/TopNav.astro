@@ -1,20 +1,28 @@
 ---
 import { animate } from "motion"
+import Blobity from "blobity";
 ---
 <style>
 	/* Input Label Container Styles */
+	.Whitesmoke {fill: whitesmoke;}
+	.white-logo {fill: whitesmoke;}
 	input {display: none;}
 	#Burst-Menu:checked ~ .container {clip-path: circle(100%);}
-    label {z-index: 5; width: 50px; height: 50px; border-radius: 50px; position: fixed; top: 64px; right: 200px; color: #ffffff00; text-align: center; display: flex; align-items: center; justify-content: center;}
+	input[type="checkbox"]:checked ~ .container {clip-path: circle(100%);}
+    label {z-index: 5; width: 50px; height: 50px; border-radius: 50px; position: fixed; top: 64px; right: 200px; color: red; text-align: center; display: flex; align-items: center; justify-content: center; visibility: hidden;}
 
 	/*Container Styles */
 	    /* scoped to the component, other H1s on the page remain the same */
-	.container { width: 100%; height: 100%; background: salmon; position: fixed; top: 0; right: 0; clip-path: circle(25px at 110% 8px); transition: all 500ms ease-in-out; display: flex; align-items: center; justify-content: center;}
-    .menu {display: flex; margin: 0 auto; width: 100%; justify-content: center;}
+	.container { width: 100%; height: 100%; background: black; position: fixed; top: 0; right: 0; clip-path: circle(25px at 110% 8px); transition: all 500ms ease-in-out; display: flex; align-items: center; justify-content: center; z-index: 5;}
+    .menu-left, .menu-right {display: flex; margin: 0 auto; width: 50%; justify-content: center;}
     .column-1, .column-2 {display: flex; flex-direction: column; margin: 2rem;}
+	.column-3 {display: flex; flex-direction: column;}
     /* Menu Items Styles */
+	.menu-subhead {display: flex; align-items: center;}
     .category-heading, .category-link {font-weight: 700; font-size: var(--step-4); margin-block: 2rem; color: whitesmoke;}
-    .column-1 a, .column-2 a {margin-block: 1rem; font-size: 2rem; font-weight: 400; color: whitesmoke;}
+    .column-1 a, .column-2 a, .column-3 a {margin-block: 1rem; font-size: 2rem; color: whitesmoke;}
+	.category-subhead {color: whitesmoke; margin: 0; font-size: var(--step-2); font-weight: 600;} .menu-subhead img {margin: 1rem;}
+	.menu-right a h4 {margin:0 0 1rem 0;}
 
 	    /* scoped to the component, other H1s on the page remain the same */
 		.main-top-nav {height: auto; margin-block: 2rem; width: 100%; z-index: 5; position: fixed; transition: all 500ms;}
@@ -39,6 +47,10 @@ import { animate } from "motion"
   transform: translateY(calc(-1 * var(--nav-height)));
   box-shadow: none;
 	}
+
+	/* Change Logo and Burst Color on Menu Click */
+	#black-path {transition: all 0.5s;}
+
 /* MOBILE */
 @media screen and (max-width: 600px) {
 	.site-logo, .menu-burst {width: 85px; position: relative;}
@@ -46,11 +58,49 @@ import { animate } from "motion"
 
 
   </style>
+
+<input type="checkbox" id="Burst-Menu"> 
+<label for="Burst-Menu"><i>MMM</i></label>
+<div class="container">
+    <div class="menu-left">
+        <div class="column-1">
+            <h4 class="category-heading">About</h4>
+			<a href="#/">Me</a>
+			<a href="#/">Resume</a>
+			<a href="#/">Comyx</a>
+			<!-- <a href="#/">Common Fate</a> -->
+			<a href="#/">Contact</a>
+        </div>
+        <div class="column-2">
+            <h4 class="category-heading">Work</h4>
+			<a href="/design">Design</a>
+			<a href="#/">Film & Video</a>
+			<!-- <a href="#/">Comics</a>
+			<a href="#/">Art</a>
+			<a href="#/" class="category-link">Blog</a> -->
+        </div>
+    </div>  
+	<div class="menu-right">
+		<div class="column-3">
+			<span class="menu-subhead">
+				<h4 class="category-subhead">Chicago, IL</h4>
+				<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Round%20Pushpin.png" alt="Round Pushpin" width="40" height="40" />
+				</span>
+			<a><h4>matthew.m.morrison23@gmail.com</h4></a>
+			<span class="menu-subhead">
+				<h4 class="category-subhead">Social</h4>
+				<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Mobile%20Phone%20with%20Arrow.png" alt="Mobile Phone with Arrow" width="40" height="40" />
+			</span>
+			<a><h4>Linkedin</h4></a>
+			<a><h4>Instagram</h4></a>
+		</div>	
+	</div>  
+</div>
   
 <section client:load class="main-top-nav light-nav" id="top-nav">
     <div class="navigation">
-        <div class="site-logo">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <div class="site-logo"><a href="/">
+            <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;}
@@ -190,13 +240,13 @@ import { animate } from "motion"
 	<path d="M421.78,418.93c-3.64-5.07-18.26-23.85-47.89-25.31c-34.31-1.69-62.78,21.13-67.85,25.31
 		c22.49-91.48,44.98-182.97,67.47-274.45c8.56-34.84,41.42-63.08,73.38-63.08h0c31.96,0,50.93,28.24,42.36,63.08L421.78,418.93z"/>
 </g>
-</svg>
+</svg><a/>
         </div>
-        <div class="menu-burst">
+        <div class="menu-burst" id="burst-toggle">
 
             <svg version="1.1" id="Black-Burst" x="0px" y="0px"
             viewBox="0 0 101 74" style="enable-background:new 0 0 101 74;" xml:space="preserve">
-                <path d="M50.5,18.8l12.9-17l-0.4,19.4l22.7-10L72,27.9l26.5-0.3L75.4,37l23.2,9.4L72,46.1l13.6,16.7l-22.7-10l0.4,19.4l-12.9-17
+                <path id="black-path" class="Black" d="M50.5,18.8l12.9-17l-0.4,19.4l22.7-10L72,27.9l26.5-0.3L75.4,37l23.2,9.4L72,46.1l13.6,16.7l-22.7-10l0.4,19.4l-12.9-17
            l-12.9,17l0.4-19.4l-22.7,10L29,46.1L2.4,46.4L25.6,37L2.4,27.6L29,27.9L15.3,11.2l22.7,10L37.6,1.8L50.5,18.8z"/>
             </svg>
             <!-- RED BURST -->
@@ -233,28 +283,13 @@ import { animate } from "motion"
     </div>
 </section>
 
-<input type="checkbox" id="Burst-Menu"> 
-<label for="Burst-Menu"><i>MMM</i></label>
-<div class="container">
-    <div class="menu">
-        <div class="column-1">
-            <h4 class="category-heading">Work</h4>
-        <a href="/design">Design</a>
-        <a href="#/">Film & Video</a>
-        <a href="#/">Comics</a>
-        <a href="#/">Art</a>
-        <a href="#/" class="category-link">Blog</a>
-        </div>
-        <div class="column-2">
-            <h4 class="category-heading">About</h4>
-        <a href="#/">Me</a>
-        <a href="#/">Resume</a>
-        <a href="#/">Comyx</a>
-        <a href="#/">Common Fate</a>
-        <a href="#/" class="category-link">Contact</a>
-        </div>
-    </div>    
-</div>
+<script>
+	import Blobity from 'blobity';
+
+const options = { color: '#000000', dotColor: '#fffffff', dotSize: '12', zIndex: '123456789', invert: 'true', opacity: '0.88' };
+new Blobity(options);
+
+</script>
 	
 <script is:inline>
 // Enable hidden nav bar
@@ -273,6 +308,27 @@ import { animate } from "motion"
   });
 }
 
+</script>
+
+<script is:inline>
+	// Clicking on the burst itself will click the checkbox. This gets rid of the reliance on clicking the input while keeping the hover animations 
+	const toggleChecked = () => document.getElementById('Burst-Menu').toggleAttribute('checked');
+document.getElementById('burst-toggle').addEventListener('click', toggleChecked);
+
+	// Clicking on the menu will change the logo and burst fills to white
+  const menuButton = document.getElementById('Black-Burst');
+  const invertBackground = document.getElementById('black-path');    
+
+  menuButton.addEventListener('click', () => {
+    invertBackground.classList.toggle('Whitesmoke');
+});
+
+	// Clicking on the menu will change the logo and burst fills to white
+  const whiteFill = document.getElementById('logo');    
+
+  menuButton.addEventListener('click', () => {
+    whiteFill.classList.toggle('Whitesmoke');
+  });
 </script>
 
 <!-- Motion Test - WORKING
