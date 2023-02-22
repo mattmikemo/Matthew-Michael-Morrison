@@ -1,0 +1,24 @@
+---
+// Your component script here!
+---
+<style>
+    /* Layout Styles */
+ #image-text {padding-block: 4rem; margin-top: var(--step-5);}
+ .image-text-container {display: flex;}
+ .image-side {width: 40%;}
+ .text-side {width: 60%; padding-inline: var(--step-5);}
+
+/* DARK MODE */
+ body.dark-mode .text-side {}
+ </style>
+  
+ <section id="image-text">
+    <div class="image-text-container">
+        <div class="image-side">
+            <slot name="image-side"></slot>
+        </div>
+        <div class="text-side">
+            <slot name="text-side"></slot>
+        </div>
+    </div>
+ </section>

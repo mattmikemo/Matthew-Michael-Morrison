@@ -1,0 +1,61 @@
+---
+import DarkLayout from "../layouts/DarkLayout.astro";
+import TopNav from "../components/TopNav.astro";
+import ImageText from "../components/ImageText.astro";
+import IntersectionObserver from "../components/IntersectionObserver.astro";
+import BacktoTop from "../components/BacktoTop.astro";
+import Footer from "../components/Footer.astro";
+// or if imported from package
+---
+<style>
+    /* scoped to the component, other H1s on the page remain the same */
+    h1, h2, h3, h4, h5, h6 {text-align: center;}
+    h3 {font-size: var(--step-4); margin-bottom: 5rem;}
+    h4 {font-size: var(--step-1); font-weight: 700; margin-block: var(--step-2);}
+    h6 {margin-block: var(--step-2);}
+    .accolades-highlights {margin-top: var(--step-3); margin-bottom: var(--step-5); padding-block: var(--step-2);}
+	main {width: 80%; margin: 0 auto; padding-top: 5rem;}
+    .laurel-row {margin-bottom: 5rem;}
+    .Home-Intro {text-align: center; font-family: neue-haas-grotesk-display, sans-serif;
+    font-size: var(--step-4); margin-block: 120px;}
+	input[type="checkbox"]:checked ~ #BlackBurst {color: aqua;}
+    .bio-text {font-size: var(--step-1); line-height: 1.5; margin: 0 0 2rem 0;}
+
+    /* Dark Modde Styling */
+
+    .dark-mode h1, h2, h3, h4, h5, h6, p {color: whitesmoke;}
+
+  </style>
+
+<DarkLayout>
+	<TopNav></TopNav>
+    <IntersectionObserver></IntersectionObserver>
+	<main class="dark-mode">
+        <ImageText>
+            <img slot="image-side" src="/Images/film-tv/film-tv-profile-pic.jpg" alt="Matthew Michael Morrison portrait">
+            <p slot="text-side" class="bio-text">I began storytelling at an early age by drawing monsters and writing their backstories on church programs during service. I love to explore the paradoxical nature of human existence through writing expansive horror, mystery, and crime stories. I also enjoy dabbling in comedy and fantasy every once in a while. </p>
+            <p slot="text-side" class="bio-text">I consider empathy and curiosity to be my superpowers when I am concocting worlds and crafting characters. I believe I have a responsibility to tell peoples’, especially marginalized groups’, stories with authenticity and awareness. </p>
+        </ImageText>
+        <h3>Contest Placements</h3>
+        <div class="grid-wrapper-min-max laurel-row">
+            <img class="grid-item slide-in" src="/Images/film-tv/Laurel-Winner-Oniros-Film-Awards-2022.png">
+            <img class="grid-item slide-in" src="/Images/film-tv/Laurel-Finalist-Hollywood-Just4shorts-2022.png">
+            <img class="grid-item slide-in" src="/Images/film-tv/Laurel-Finalist-Independent-Shorts-2022.png">
+        </div>
+        <div class="grid-wrapper-min-max laurel-row">
+            <img class="grid-item slide-in" src="/Images/Film-Tv/Laurel-Selection-Miami-Indie-Film-2022.png">
+            <img class="grid-item slide-in" src="/Images/Film-Tv/Laurel-Selection-Minn-Web-Fest-2022.png">
+            <img class="grid-item slide-in" src="/Images/Film-Tv/Laurel-Selection-Vegas-Shorts-2022.png">
+        </div>
+        <section class="accolades-highlights">
+        <h3>Accolades and Highlights</h3>
+            <h4>Coverfly Top 1% in Genre/Format</h4>
+                <h6>with THE LAST TO STAND - EPISODE 1</h6>
+            <h4>Grand Winner, Let's Make It! - 8th LET'S MAKE IT! Screenwriting Contest 2021-2022</h4>
+                <h6>with THE LAST TO STAND - EPISODE 1</h6>
+        </section>
+	</main>
+    <BacktoTop></BacktoTop>
+<Footer></Footer>
+</DarkLayout>
+

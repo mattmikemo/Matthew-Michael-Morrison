@@ -51,12 +51,15 @@ import Blobity from "blobity";
 	/* Change Logo and Burst Color on Menu Click */
 	#black-path {transition: all 0.5s;}
 
+	/* Dark Mode Styles */
+	body.dark-mode #black-path {fill: whitesmoke;}
+    body.dark-mode .Black {fill: whitesmoke;}
+	body.dark-mode .site-logo svg {fill: whitesmoke;}
+
 /* MOBILE */
 @media screen and (max-width: 600px) {
 	.site-logo, .menu-burst {width: 85px; position: relative;}
 }
-
-
   </style>
 
 <input type="checkbox" id="Burst-Menu"> 
@@ -74,7 +77,7 @@ import Blobity from "blobity";
         <div class="column-2">
             <h4 class="category-heading">Work</h4>
 			<a href="/design">Design</a>
-			<a href="#/">Film & Video</a>
+			<a href="/film-tv">Film & Video</a>
 			<!-- <a href="#/">Comics</a>
 			<a href="#/">Art</a>
 			<a href="#/" class="category-link">Blog</a> -->
