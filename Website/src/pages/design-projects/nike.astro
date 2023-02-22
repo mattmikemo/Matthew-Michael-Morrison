@@ -27,6 +27,22 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
     margin-bottom: 2rem;
 }
 
+/* Image Reveal Styles */
+.image-reveal {
+	position: absolute;
+	width: 300px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	opacity: 0;
+	transform: scale(0.8);
+	transition: all .5s ease-out;
+}
+
+
  /* Typography Styles */
  h1.project-title {font-weight: 700; margin-inline: 1rem;}
  p.project-intro {font-size: var(--step-1); font-weight: 200; line-height: 1.5;}
@@ -74,19 +90,20 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
                 <img class="grid-item fade-in" src="/public/images/Projects/nike/Nike-Footer-Mobile.jpg">
             </div>
             <img class="project-img fade-in" src="/public/images/Projects/nike/Nike-Shopping-Page.jpg">
-        <ProjectPreview source2="/public/Images/Projects/nike/Nike-Project-Cover.jpg">
+
+        <ProjectPreview>
             <h4 slot="project-1" class="project-preview-title"> AT&T Believe Social Campaign</h4>
-            <h4 slot="project-2" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+                <div slot="project-1" class="image-reveal"><img class="project-preview-img" src="/public/images/Placeholders/Placeholder-1350x1800.jpg"></div>
+            <h4 slot="project-2" class="project-preview-title">Nike Store Concept</h4>
+               <div slot="project-2" class="image-reveal"><img class="project-preview-img" src="/public/images/Placeholders/Placeholder-1350x1800.jpg"></div>
             <h4 slot="project-3" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+                <div slot="project-3" class="image-reveal"><img class="project-preview-img" src="/public/images/Placeholders/Placeholder-1350x1800.jpg"></div>
             <h4 slot="project-4" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+                <div slot="project-4" class="image-reveal"><img class="project-preview-img" src="/public/images/Placeholders/Placeholder-1350x1800.jpg"></div>
         </ProjectPreview>
+
 	</main>
     <IntersectionObserver></IntersectionObserver>
     <BacktoTop></BacktoTop>
     <Footer></Footer>
 </BaseLayout>
-
-<script>
-    import Swup from 'swup';
-const swup = new Swup(); // only this line when included with script tag
-</script>

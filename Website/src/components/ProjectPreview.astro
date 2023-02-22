@@ -1,21 +1,80 @@
 ---
 const {url} = Astro.props
-const { source1, source2, source, source4} = Astro.props;
 ---
-<style>
+<style is:global>
     /* scoped to the component, other H1s on the page remain the same */
-    #project-preview {padding-block: 5rem;}
-    .preview-item {border-bottom: solid black 1px;}
-    .last-item {}
+    .project-preview-wrapper {position: relative;}
+    #project-preview {padding-top: 5rem;}
+    .preview-item {border-bottom: solid black 1px;} #project-item-4 {border-bottom: none;}
     #project-preview h3 {margin-inline: 1rem; margin-bottom: 5rem; font-size: var(--step-4);}
+    .preview-link {display: flex; z-index: 10000; mix-blend-mode: difference; transition: all 0.5s;} 
+    .preview-link:hover {scale: 1.05; translate: 2% 0; opacity: 0.9;}
+
+    /* Project Image Styles */
+    .image-reveal {position: absolute; top: 0; left: 0; width: 405px; height: 540px; opacity: 0; pointer-events: none; transform: translate(0, -300px); transition: all 0.5s; z-index: -5;}
+    .project-preview-img img {opacity: 0%; position: absolute; top: -100%; pointer-events: none; user-select: none; transition: all; mix-blend-mode: difference; z-index: -50;}
+    
+
   </style>
   
   <section id="project-preview">
     <div class="project-preview-wrapper">
         <h3>See More Projects</h3>
-        <div class="preview-item" id="project-item-1"><a href="{url}"><slot name="project-1"></slot><img src="{source1}"></a></div>
-        <div class="preview-item" id="project-item-2"><a href="{url}"><slot name="project-2"></slot><img src="{source2}"></a></div>
-        <div class="preview-item" id="project-item-3"><a href="{url}"><slot name="project-3"></slot><img src="{source3}"></a></div>
-        <div class="preview-item last-item" id="project-item-4"><a href="{url}"><slot name="project-4"></slot><img src="{source4}"></a></div>
+        <div class="preview-item" id="project-item-1"><a data-no-blobity class="preview-link" href="{url}"><slot name="project-1"></slot></a></div>
+        <div class="preview-item" id="project-item-2"><a data-no-blobity class="preview-link" href="{url}"><slot name="project-2"></slot></a></div>
+        <div class="preview-item" id="project-item-3"><a data-no-blobity class="preview-link" href="{url}"><slot name="project-3"></slot></a></div>
+        <div class="preview-item" id="project-item-4"><a data-no-blobity class="preview-link" href="{url}"><slot name="project-4"></slot></a></div>
     </div>
   </section>
+
+  <script> //This reveals the image preview
+    const link = document.querySelectorAll('.preview-link');
+const linkHoverReveal = document.querySelectorAll('.image-reveal');
+const linkImages = document.querySelectorAll('.project-preview-img');
+
+
+for(let i = 0; i < link.length; i++) {
+  link[i].addEventListener('mousemove', (e) => {
+    linkHoverReveal[i].style.opacity = 1;
+    linkHoverReveal[i].style.transform = `translate(-50%, -50% ) rotate(5deg)`;
+    linkImages[i].style.transform = 'scale(1, 1)';
+    linkHoverReveal[i].style.left = e.clientX + "px";
+  })
+  
+  link[i].addEventListener('mouseleave', (e) => {
+    linkHoverReveal[i].style.opacity = 0;
+    linkHoverReveal[i].style.transform = `translate(-50%, -50%) rotate(-5deg)`;
+    linkImages[i].style.transform = 'scale(0.8, 0.8)';
+  })
+}
+for(let i = 0; i < link.length; i++){
+    link[i].addEventListener('mouseover', () => {
+        for(let j = 0; j < link.length; j++){
+            if(j !== i){
+                link[j].style.opacity = 0.2;
+                link[j].style.zIndex = 500;
+            }else{
+                link[j].style.opacity = 1;
+                link[j].style.zIndex = 100;
+            }
+        }
+    })
+
+    link[i].addEventListener('mouseleave', () => {
+        for(let i = 0; i < link.length; i++){
+            link[i].style.opacity = 1;
+        }
+    })
+
+    link[i].addEventListener('mouseenter', () => {
+        imgIndex = i;
+        target = 1
+    });
+
+    link[i].addEventListener('mouseleave', () => {
+        target = 0;
+    })
+}
+</script>
+
+  
