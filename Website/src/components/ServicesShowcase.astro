@@ -1,0 +1,52 @@
+---
+// Your component script here!
+---
+<style>
+    /* scoped to the component, other H1s on the page remain the same */
+    #services-showcase {padding-block: var(--step-5); background-color: black;}
+    .services-showcase-container {display: flex; flex-direction: column; width: 80%; margin: 0 auto;}
+    #service-showcase h3, h4, h5, p {color: whitesmoke;}
+    .top-section h3 {color: whitesmoke; font-size: var(--step-4); font-weight: 700;}
+    .top-section p {margin: 0 0 2.5rem 0; line-height: 1.75;}
+    .bottom-section h4 {line-height: 1.5;}
+    .bottom-section > h4 {font-weight: 700;}
+    .services-container {display: flex; width: 50%;}
+    .info-container {width: 50%;}
+    .services-left, .services-right {display: flex; flex-direction: column;}
+    .services-left h4, .services-right h4 {margin-block: 1rem; font-weight: 200;}
+    .services-left {margin-right: 2rem;} .services-right {margin-left: 2rem;}
+
+    /* Top and Bottom Sections */
+    .top-section, .bottom-section {display: flex; justify-content: space-between;}
+
+    /* MOBILE Styles */
+    @media screen and (max-width: 500px) {
+     #services-showcase {margin-block: var(--step-4);}
+    .services-container {flex-direction: column;}
+    .top-section, .bottom-section {flex-direction: column;}
+    .top-section p {margin:2.5rem 0; font-size: var(--step-1);}
+    .info-container {width: 100%;}
+    .services-container {}
+    .services-right {margin-left: 0;}
+    .services-left, .services-right {padding-inline: 0;}
+}
+
+  </style>
+  
+<section id="services-showcase">
+    <div class="services-showcase-container">
+        <div class="top-section">
+            <h3>No one size fits all</h3>
+                <div class="info-container">
+                    <p>Every brand has its own unique story that commands time, focus, and organization. Every project is an opportunity to tell an unforgettable story that will drive engaging and inventive solutions. My process is studious and includes research, strategy, creative conceptualization, and design.</p>
+                </div>
+        </div>
+        <div class="bottom-section">
+            <h4>Services</h4>
+            <div class="services-container">
+                <div class="services-left"><h4>Web Design</h4><h4>Video Production</h4></div>
+                <div class="services-right"><h4>Art Direction</h4><h4>Motion Design</h4></div>
+            </div>
+        </div>
+    </div>
+</section>

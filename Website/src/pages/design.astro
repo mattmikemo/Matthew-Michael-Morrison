@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TopNav from "../components/TopNav.astro";
-import FullMenu from "../components/FullMenu.astro";
-import TickerTape from "../components/TickerTape.astro"
+import Footer from "../components/Footer.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import BacktoTop from "../components/BacktoTop.astro";
 
 // import needed modules from npm
 import Wheelz from 'wheelz';
@@ -17,9 +17,9 @@ import Wheelz from 'wheelz';
 	input[type="checkbox"]:checked ~ #BlackBurst {color: aqua;}
     /* Project Cards Styles */
     body {transition: all 500ms;}
-    .project {width: 50%;}
+    .project {width: 80%; transition: all; transform: translateY(200px);}
     .project img {margin-block: 1rem;}
-    .project h3 {font-weight: 600; margin: 1.5rem;} .project h4 {margin: 1.5rem;} .project p {margin-inline: 1.5rem;}
+    .project h3 {font-weight: 600; margin: 1.5rem; font-size: var(--step-4);} .project h4 {margin: 1.5rem;} .project p {margin-inline: 1.5rem;}
     .project h4 {line-height: 1.25;}
     #project-1, #project-3, #project-5, #project-7, #project-9 {float: left; clear: right;}
     #project-2, #project-4, #project-6, #project-8, #project-10 {clear: left; float: right;}
@@ -28,7 +28,7 @@ import Wheelz from 'wheelz';
 
 <BaseLayout>
 	<TopNav></TopNav>
-	<main id="wheelz">
+	<main>
         <div class="project" id="project-1">
         <ProjectCard title="Loyola">
             <a href="/design-projects/loyola">
@@ -52,7 +52,7 @@ import Wheelz from 'wheelz';
         <div class="project" id="project-3">
             <ProjectCard title="example3">
                 <a href="#/">
-                    <img src="https://via.placeholder.com/1350x1800">
+                    <img src="https://via.placeholder.com/1000x560">
                         <h3>Test Title of Project</h3>
                         <h4>Added Subtitle for the Project</h4>
                             <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
@@ -89,9 +89,28 @@ import Wheelz from 'wheelz';
                     </a>
                 </ProjectCard>
                 </div>
-
 	</main>
 </BaseLayout>
+
+<!-- Motion Page Velocity -->
+<script>
+
+</script>
+
+<!-- Motion Project Cards -->
+<script>
+import { inView, animate } from "motion";
+
+inView(".project", ({ target }) => {
+  animate(
+    target.querySelector("div"),
+    { y: -200 },
+    { opacity: 1},
+    { delay: 0.9, duration: 1, easing: [0.17, 0.55, 0.55, 1] }
+  );
+});
+
+</script>
 
 <script>
     //Project 1

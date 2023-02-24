@@ -3,10 +3,17 @@
 ---
 <style>
     /* Layout Styles */
- #image-text {padding-block: 4rem; margin-top: var(--step-5);}
+ #image-text {padding-block: 4rem;}
  .image-text-container {display: flex;}
  .image-side {width: 40%;}
  .text-side {width: 60%; padding-inline: var(--step-5);}
+
+ /* MOBILE STYLES */
+ @media screen and (max-width: 480px) {
+ .image-text-container {display: block;}
+ .image-side, .text-side {width: 100%;} .text-side {padding: 2rem 0 1rem 0;}
+ #image-text {padding: 2rem 0 0 0;}
+ }
 
 /* DARK MODE */
  body.dark-mode .text-side {}

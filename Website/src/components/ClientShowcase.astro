@@ -1,0 +1,28 @@
+---
+// Your component script here!
+---
+<style>
+    #client-showcase {width: 80%; margin: 0 auto; padding-block: var(--step-4);}
+    .logo-row img {max-width: 300px;}
+    .logo-row .grid-item:last-of-type {justify-self: end;}
+    .logo-row .grid-item:nth-of-type(2) {justify-self: center;}
+    .logo-row {padding-bottom: var(--step-5);}
+
+    /* MOBILE Styles */
+    @media screen and (max-width: 500px) {
+        #client-showcase {width: 80%; margin: 0 auto; padding-block: var(--step-2);}
+    .logo-row img {max-width: 250px;}
+    .logo-row .grid-item:first-of-type {justify-self: center;}
+    .logo-row .grid-item:last-of-type {justify-self: center;}
+    .logo-row .grid-item:nth-of-type(2) {justify-self: center;}
+    .logo-row {padding-bottom: var(--step-2);}
+}
+</style>
+  
+<section id="client-showcase">
+    <div class="grid-wrapper-min-max logo-row">
+        <img class="grid-item slide-in" src="/Images/client-logos/WNBA-Logo.svg">
+        <img class="grid-item slide-in" src="/Images/client-logos/McD-Arches-Logo.svg">
+        <img class="grid-item slide-in" src="/Images/client-logos/ATT-Logo.svg">
+    </div>
+</section>
