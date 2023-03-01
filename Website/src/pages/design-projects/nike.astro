@@ -27,40 +27,7 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
 }
 
 /* Image Reveal Styles */
-.image-reveal {
-	position: absolute;
-	width: 300px;
-	height: 400px;
-	top: 50%;
-	left: 50%;
-	pointer-events: none;
-	transform: translate(-50%, -50%);
-	overflow: hidden;
-	opacity: 0;
-	transform: scale(0.8);
-	transition: all .5s ease-out;
-}
-
-
- /* Typography Styles */
- h1.project-title {font-weight: 700; margin-inline: 1rem;}
- p.project-intro {font-size: var(--step-1); font-weight: 200; line-height: 1.5;}
- .body {line-height: 1.5; margin: 1rem;}
- .credits-headline  {font-weight: 700;}
- .job-title  {font-weight: 500; font-style: italic;}
- .person-name {margin-top: 0.5rem;}
- .project-preview-title {margin-inline: 1rem; margin-block: 2rem; font-size: var(--step-2); font-weight: 700;}
-
- /* MOBILE */
-@media screen and (max-width: 600px) {
-	main {width: 90%;}
-    h1.project-title {margin: 0; font-size: var(--step-6);}
-    p.project-intro {font-size: var(--step-2);}
-    .credits-headline  {font-weight: 700; font-size: var(--step-2); margin-block: 1.75rem;}
-    .job-title  {font-weight: 500; font-style: italic; font-size: var(--step-2);}
-    .person-name, .scope-details {font-size: var(--step-2);}
-}
- 
+.image-reveal {position: absolute; width: 300px; height: 400px; top: 50%; left: 50%; pointer-events: none; transform: translate(-50%, -50%); overflow: hidden; opacity: 0; transform: scale(0.8); transition: all .5s ease-out;}
   </style>
 
 <BaseLayout>

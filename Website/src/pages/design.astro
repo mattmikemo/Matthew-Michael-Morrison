@@ -35,7 +35,7 @@ import Wheelz from 'wheelz';
                 <img src="https://via.placeholder.com/1000x560">
                     <h3>Loyola University Chicago</h3>
                     <h4>UI/UX, Product Design, Design Systems</h4>
-                        <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
+                        <p> </p>
             </a>
         </ProjectCard>
         </div>
@@ -45,17 +45,17 @@ import Wheelz from 'wheelz';
                 <img src="/public/Images/Projects/nike/Nike-Project-Cover.jpg">
                     <h3>Nike Store</h3>
                     <h4>Branding, UI/UX, Product Design, Concept</h4>
-                        <!-- <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p> -->
+                        <!-- <p> </p> -->
             </a>
         </ProjectCard>
         </div>
         <div class="project" id="project-3">
-            <ProjectCard title="example3">
-                <a href="#/">
-                    <img src="https://via.placeholder.com/1000x560">
-                        <h3>Test Title of Project</h3>
-                        <h4>Added Subtitle for the Project</h4>
-                            <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
+            <ProjectCard title="Insert-Coin">
+                <a href="/design-projects/insert-coin">
+                    <img src="/public/Images/Projects/Insert-Coin/Insert-Coin-Project-Cover.jpg">
+                        <h3>SXSW x Insert Coin</h3>
+                        <h4>Art Direction, Print Design</h4>
+                            <!-- <p> </p> -->
                 </a>
             </ProjectCard>
             </div>
@@ -65,17 +65,17 @@ import Wheelz from 'wheelz';
                     <img src="https://via.placeholder.com/1000x560">
                         <h3>Test Title of Project</h3>
                         <h4>Added Subtitle for the Project</h4>
-                            <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
+                            <p> </p>
                 </a>
             </ProjectCard>
             </div>
             <div class="project" id="project-5">
-                <ProjectCard title="example5">
-                    <a href="#/">
-                        <img src="https://via.placeholder.com/1000x560">
-                            <h3>Test Title of Project</h3>
-                            <h4>Added Subtitle for the Project</h4>
-                                <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
+                <ProjectCard title="Agent-511">
+                    <a href="/design-projects/agent511">
+                        <img src="/public/Images/Projects/Agent-511/Agent-511-Project-Cover.jpg">
+                            <h3>Agent 511</h3>
+                            <h4>Web, Art Direction</h4>
+                                <!-- <p> </p> -->
                     </a>
                 </ProjectCard>
                 </div>
@@ -85,7 +85,7 @@ import Wheelz from 'wheelz';
                         <img src="https://via.placeholder.com/1000x560">
                             <h3>Test Title of Project</h3>
                             <h4>Added Subtitle for the Project</h4>
-                                <p>This is the in-depth description for the project. This area is optional and not every project needs this description text.</p>
+                                <p> </p>
                     </a>
                 </ProjectCard>
                 </div>
@@ -125,6 +125,20 @@ inView(".project", ({ target }) => {
     document.getElementById("body").style.backgroundColor = "#9bedff";
 });
     document.getElementById("project-2").addEventListener("mouseout", function() {
+    document.getElementById("body").style.backgroundColor = "white";
+});
+    //Project 3
+    document.getElementById("project-3").addEventListener("mouseover", function() {
+    document.getElementById("body").style.backgroundColor = "#7df997";
+});
+    document.getElementById("project-3").addEventListener("mouseout", function() {
+    document.getElementById("body").style.backgroundColor = "white";
+});
+    //Project 5
+    document.getElementById("project-5").addEventListener("mouseover", function() {
+    document.getElementById("body").style.backgroundColor = "#0085ff";
+});
+    document.getElementById("project-5").addEventListener("mouseout", function() {
     document.getElementById("body").style.backgroundColor = "white";
 });
 </script>

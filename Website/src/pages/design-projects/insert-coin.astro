@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TopNav from "../../components/TopNav.astro";
+import ProjectIntro from "../../components/ProjectIntro.astro";
+import Footer from "../../components/Footer.astro";
+import BacktoTop from "../../components/BacktoTop.astro";
+import ProjectPreview from "../../components/ProjectPreview.astro";
+import IntersectionObserver from "../../components/IntersectionObserver.astro";
+---
+<style>
+    .project-img {width: 100%; margin-block: 1rem;}
+    /* scoped to the component, other H1s on the page remain the same */
+	main {width: 80%; margin: 0 auto;}
+    /* Hero Image Styling */
+    .project-hero {
+    display: flex;
+    background-image: url("/public/images/Projects/Insert-Coin/Insert-Coin-Project-Hero.jpg");
+    width: 100%;
+    min-height: 50em;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+ 
+/* Image Reveal Styles */
+.image-reveal {position: absolute; width: 300px; height: 400px; top: 50%; left: 50%; pointer-events: none; transform: translate(-50%, -50%); overflow: hidden; opacity: 0; transform: scale(0.8); transition: all .5s ease-out;}
+  </style>
+
+<BaseLayout>
+	<TopNav></TopNav>
+    <div class="project-hero" id="nike-hero"></div>
+    
+	<main class="main">
+        <ProjectIntro>
+            <h1 slot="project-title" class="project-title">Insert Coin</h1>
+            <p slot="project-intro" class="project-intro">Insert Coin is a documentary that recounts the oral history of the team behind some of the biggest video games (Mortal Kombat, NBA Jam, and others) of all time. Our team worked together with veteran game developer and filmmaker, Joshua Tsui to produce branding, digital elements for the documentary, and print marketing for SXSW.</p>
+            <p slot="project-intro" class="project-intro">I designed limited edition poster prints for the SXSW 2020 film debut. You can <a href="https://vimeo.com/ondemand/insertcoin/474798086">watch the trailer and film on Vimeo.</a> </p>
+            <h6 slot="project-credits"  class="credits-headline">SCOPE</h6>
+            <h6 slot="project-credits" class="scope-details">-Poster Design, Marketing campaign collateral</h6>
+            <h6 slot="project-credits"  class="credits-headline">CREDITS</h6>
+            <h6 slot="project-credits" class="job-title">Creative Director</h6>
+            <h6 slot="project-credits" class="person-name">Jason Schwartz</h6>
+            <h6 slot="project-credits" class="job-title">Art Director & Designer</h6>
+            <h6 slot="project-credits" class="person-name">Matthew Michael Morrison</h6>
+        </ProjectIntro>
+
+        <div class="p3"></div>
+            <h3 class="project-heading">My Hypothesis</h3>
+                <p class="project-copy">One of the pros of working on such iconic brands and franchises is you can take a minimal approach in your art direction with less risk. I thought a “less is more” approach would work well with easily recognizable elements. Having also played the games myself, I know there are many memorable spoken lines from games such as NBA Jam and Mortal Kombat. There was an opportunity here to go big and bold with typography.</p>
+                <p class="project-copy">Other distinguishable characteristics of early 90s games were pixel art and the technology that drove those games. Showcasing pixel art, which has grown into its own sub-genre on game marketplaces such as Steam, is a quick and fun way to grab the audience’s attention. Color also plays a huge role because the technology of arcade CRT monitors creates a chromatic aberration visual effect with the graphics.</p>
+            <h3 class="project-heading">Putting it into Practice</h3>
+                <p class="project-copy">I started by assessing what assets were available to us that I could experiment with. We were provided with some sprites that were used in the games. I began placing those in rough layouts testing them against my hypothesis of letting the recognizability of the characters speak for itself. While it was a good start. I felt as if things could be pushed further.</p>
+            <div class="grid-wrapper-min-max py4">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/sprite-test-goro.png">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/sprite-test-sub-zero.png">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/sprite-test-scorpion.png">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/sprite-test-scorpion-pose-2.png">
+            </div>
+            <h4 class="project-subhead">Adding in some Color</h4>
+                <p class="project-copy">I decided to add in some color and really push recognizability by turning the characters into silhouettes. This also simplified the visual complexity of the poster (again, going for less is more) while adding a pop through the use of color. </p>
+            <div class="grid-wrapper-min-max py4">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/color-test-goro.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/color-test-sub-zero.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/color-test-scorpion.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/color-test-nba-jam.jpg">
+            </div>
+            <h4 class="project-subhead">A Poster Spread?</h4>
+                <p class="project-copy">I was also intrigued by the idea of playing off of Mortal Kombat attacks and the acts of shooting or passing the ball in NBA Jam. I played with the idea of one poster “giving the action” while the other poster in the set was “receiving the action”. I thought this played well the rivalry between Scorpion and Sub-Zero or 2 rivalry teams in NBA Jam. For example, Scorpion throws his attack in one poster while Sub-Zero gets hit in another. </p>
+            <div class="grid-wrapper-min-max py4">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/spread-test-scorpion.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/spread-test-raiden.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/spread-color-test-scorpion.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/spread-color-test-raiden.jpg">   
+            </div>
+            <h3 class="project-subhead">Playing with Type</h3>
+                <p class="project-copy">Futura was chosen for the logo. I liked the idea of doubling down and using it for the poster typography as well. Besides the familiarity of the typeface, the characteristics of Futura complemented the project well. The boldness, cleanness, and simplicity of the geometric shapes create continuity between the type and the pixel art. I began experimenting with scale and type style.</p>
+            <div class="grid-wrapper-min-max py4">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/type-test-nba-jam-2.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/type-test-nba-jam.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/type-test-boomshakalaka.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/type-test-heating-up.jpg">   
+            </div>
+            <h4 class="project-subhead">Combining Graphics and Typography</h4>
+                <p class="project-copy">I had two compelling directions. One with the focus more on the pixel art and the other letting the typography take over. Naturally, I wanted to see if both could be combined to create a new direction.</p>
+                <div class="grid-wrapper-min-max py4">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/combo-finish-him-goro.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/comobo-boomshakalaka-dark.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/combo-get-over-here.jpg"> 
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/combo-raiden.jpg">    
+            </div> 
+            <h4 class="project-subhead">Reaching the Finish Line</h4>
+                <p class="project-copy">After exploring more of the chromatic aberration and the “CRT effect”, I began applying it to the type and graphic to see what interesting combinations I could produce.</p>
+                <div class="grid-wrapper-min-max py4">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/crt-raiden.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/crt-fatality.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/Insert-Coin/crt-goro.jpg">   
+            </div> 
+                <p class="project-copy py4">The more ideas I executed, the more I returned to the concept of “less is more”. Instead of trying to make both the pixel art and typography work in a single layout, they both felt stronger when allowed to shine by themselves. The client liked the direction of the “CRT effect” on the type so I leaned into bold and big type. I also kept the silhouette of the pixel art to keep that simplicity but increased the scale as much as the layout would allow. </p>
+            <h3 class="project-heading">Final Results</h3>
+                    <img class="project-img fade-in" src="/public/images/Projects/Insert-Coin/heating-up-final-poster-spread.jpg">
+                    <img class="project-img fade-in" src="/public/images/Projects/Insert-Coin/boomshakalaka-final-poster-spread.jpg">
+                    <img class="project-img fade-in" src="/public/images/Projects/Insert-Coin/Outdoor-Posters-Mockup.jpg">
+        <ProjectPreview>
+            <h4 slot="project-1" class="project-preview-title"> AT&T Believe Social Campaign</h4>
+            <h4 slot="project-2" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-3" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-4" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+        </ProjectPreview>
+	</main>
+    <IntersectionObserver></IntersectionObserver>
+    <BacktoTop></BacktoTop>
+    <Footer></Footer>
+</BaseLayout>

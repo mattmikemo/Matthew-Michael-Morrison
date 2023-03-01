@@ -48,6 +48,18 @@ main {
     /* Set Fonts */
     --font-family-heading: 'neue-haas-grotesk-display', sans-serif;
     --font-family-body: 'neue-haas-grotesk-text', sans-serif;
+
+    /* COLORS */
+    :root {
+      --color-red: #ec1840;
+      --color-purple: #7a18ec;
+      --color-white: #fff;
+      --color-black-1: #111;
+      --color-black-2: #222;
+      --color-black-3: #444;
+      --speed-normal: 0.5s;
+      --speed-fast: 0.8s;
+    }
   }
   
   /* Setup */
@@ -139,3 +151,28 @@ main {
   .hug {
     margin-top: 0;
   }
+
+  /* PROJECT PAGE TYPOGRAPHY */
+
+  .project-heading {font-weight: 700; font-size: var(--step-4); line-height: 1.5; margin: 2rem auto; width: 69%;}
+  .project-subhead {font-size: var(--step-2); line-height: 1.5; text-transform: uppercase; font-weight: 600; margin: 2rem auto; width: 69%;}
+  .project-copy {font-size: var(--step-1); line-height: 1.75; margin: 2rem auto; letter-spacing: 1px; width: 69%;}
+
+  /* Intro and Credit Styles */
+ h1.project-title {font-weight: 700; margin-inline: 1rem; font-size: var(--step-5);}
+ p.project-intro {font-size: var(--step-1); font-weight: 300; line-height: 1.5; letter-spacing: 2px;}
+ .body {line-height: 1.5; margin: 1rem;}
+ .credits-headline  {font-weight: 700;}
+ .job-title  {font-weight: 500; font-style: italic;}
+ .person-name {margin-top: 0.5rem;}
+ .project-preview-title {margin-inline: 1rem; margin-block: 2rem; font-size: var(--step-2); font-weight: 700;}
+
+  /* MOBILE Type Styles*/
+@media screen and (max-width: 600px) {
+	main {width: 90%;}
+    h1.project-title {margin: 0; font-size: var(--step-6);}
+    p.project-intro {font-size: var(--step-2);}
+    .credits-headline  {font-weight: 700; font-size: var(--step-2); margin-block: 1.75rem;}
+    .job-title  {font-weight: 500; font-style: italic; font-size: var(--step-2);}
+    .person-name, .scope-details {font-size: var(--step-2);}
+}

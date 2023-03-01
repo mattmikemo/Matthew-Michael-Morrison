@@ -1,0 +1,113 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TopNav from "../../components/TopNav.astro";
+import ProjectIntro from "../../components/ProjectIntro.astro";
+import Footer from "../../components/Footer.astro";
+import BacktoTop from "../../components/BacktoTop.astro";
+import ProjectPreview from "../../components/ProjectPreview.astro";
+import IntersectionObserver from "../../components/IntersectionObserver.astro";
+---
+<style>
+    .project-img {width: 100%; margin-block: 1rem;}
+    /* scoped to the component, other H1s on the page remain the same */
+	main {width: 80%; margin: 0 auto;}
+    /* Hero Image Styling */
+    .project-hero {
+    display: flex;
+    background-image: url("/public/images/Projects/nike/Nike-Project-Hero.jpg");
+    width: 100%;
+    min-height: 50em;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/* Image Reveal Styles */
+.image-reveal {
+	position: absolute;
+	width: 300px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	opacity: 0;
+	transform: scale(0.8);
+	transition: all .5s ease-out;
+}
+
+ /* MOBILE */
+@media screen and (max-width: 600px) {
+	main {width: 90%;}
+    h1.project-title {margin: 0; font-size: var(--step-6);}
+    p.project-intro {font-size: var(--step-2);}
+    .credits-headline  {font-weight: 700; font-size: var(--step-2); margin-block: 1.75rem;}
+    .job-title  {font-weight: 500; font-style: italic; font-size: var(--step-2);}
+    .person-name, .scope-details {font-size: var(--step-2);}
+}
+ 
+  </style>
+
+<BaseLayout>
+	<TopNav></TopNav>
+    <div class="project-hero" id="nike-hero"></div>
+    
+	<main class="main">
+        <ProjectIntro>
+            <h1 slot="project-title" class="project-title">Loyola University Chicago</h1>
+            <p slot="project-intro" class="project-intro">I am a Web Designer with the Marketing and Communications Department of Loyola University Chicago. The Digital Team within that department builds, implements, and measures website strategy, design, and development across all LUC.edu websites. We work across different levels of the university to ensure a consistent and engaging user experience.</p>
+            <p slot="project-intro" class="project-intro">My role includes, but is not limited to, designing and coding responsive websites in collaboration with cross-functional and inter-departmental teams, building wireframes, presenting to key stakeholders, contributing to the development of a UI library to standardize site builds across Loyola’s schools, and sharing best practices with departmental site admins.</p>
+            <h6 slot="project-credits"  class="credits-headline">Scope</h6>
+            <h6 slot="project-credits" class="scope-details">-Typography and Color </h6>
+            <h6 slot="project-credits"  class="credits-headline">Credits</h6>
+            <h6 slot="project-credits" class="job-title">Designer</h6>
+            <h6 slot="project-credits" class="person-name">Matthew Michael Morrison</h6>
+
+        </ProjectIntro>
+        <div class="p2"></div>
+            <h3 class="project-heading">The Creation of our Design System</h3>
+                <p class="project-copy">At Loyola, I have contributed to the creation, implementation, build, and perpetuation of our design systems used across all our internal and partner sites and third-party platform integrations. Since its creation and deployment, the University has seen increased traffic across its sites.</p>
+                <p class="project-copy">The goal was to create a standard scalable system of organized, interconnected, reusable components and patterns optimized for accessibility and responsive presentation.</p>
+                <p class="project-copy">It is built on the methodology of Atomic Design. Atomic Design, coined by designer, and author, Brad Frost, breaks the UI of a site down into Atoms, Molecules, Organisms, Templates, and Pages. One can create a mental model that helps construct a UI by breaking a page down into these different elements.</p>
+            <h3 class="project-heading">System Application and Process</h3>
+                    <img class="project-img fade-in" src="/public/images/Projects/loyola/atomic-design-diagram.png">
+                <p class="project-copy py4">After an audit, strategy session with the client, and copy development, the building blocks of the design system are used to create wireframes to be presented to the client. Because the pieces of the system are responsive, scalable, and reusable components, they can fit into whatever the appropriate page layout is. All Loyola web pages follow a hierarchy to create a multi-tiered elevated page system.</p>
+            
+            <div class="grid-wrapper-min-max">
+                <img class="grid-item fade-in" src="/public/images/Projects/loyola/wireframe-event-details.jpg">
+                <img class="grid-item fade-in" src="/public/images/Projects/loyola/wireframe-past-presidents.jpg">
+                <img class="grid-item fade-in" src="/public/images/Projects/loyola/wireframe-for-delegates.jpg">
+            </div>
+                <p class="project-copy py4">After the wireframes are approved by the client, the site can be built using the approved wireframes as a basis.</p>
+            <div class="grid-wrapper-min-max">
+                    <img class="grid-item fade-in" src="/public/images/Projects/loyola/loyola-jfrc-homepage.jpg">
+                    <img class="grid-item fade-in" src="/public/images/Projects/loyola/loyola-jfrc-student-life.jpg">
+                    <img class="grid-item fade-in" src="/public/images/Projects/loyola/loyola-jfrc-tradition.jpg">
+                    <img class="grid-item fade-in" src="/public/images/Projects/loyola/loyola-jfrc-student-experience-team.jpg">
+                    <img class="grid-item fade-in" src="/public/images/Projects/loyola/loyola-jfrc-campus.jpg">
+            </div>
+                <p class="project-copy">Tied together with our content management system, the template remains a comprehensive and flexible tool for our partners and clients as they maintain their newly built sites. </p>
+            <h3 class="project-heading">Extending the System and Third-party Platforms</h3>
+                <p class="project-copy">The UI system code is also easily embeddable and extendable to third-party platforms like exposure.co. This is important as it allows us to extend our visual branding as we reach our audiences on various platforms. We also maintain control over the look, feel, and functionality of our template. Here are some example implementations of the template on Exposure. We’re also continually testing animation with the system while keeping accessibility in mind. </p>
+
+        <ProjectPreview>
+            <h4 slot="project-1" class="project-preview-title"> AT&T Believe Social Campaign</h4>
+                <div slot="project-1" class="image-reveal"><img class="project-preview-img" src="/public/images/Placeholders/Placeholder-1350x1800.jpg"></div>
+            <h4 slot="project-2" class="project-preview-title">Nike Store Concept</h4>
+               <div slot="project-2" class="image-reveal"><img class="project-preview-img" src="/public/images/Placeholders/Placeholder-1350x1800.jpg"></div>
+            <h4 slot="project-3" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+                <div slot="project-3" class="image-reveal"><img class="project-preview-img" src="/public/images/Placeholders/Placeholder-1350x1800.jpg"></div>
+            <h4 slot="project-4" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+                <div slot="project-4" class="image-reveal"><img class="project-preview-img" src="/public/images/Placeholders/Placeholder-1350x1800.jpg"></div>
+        </ProjectPreview>
+
+	</main>
+    <IntersectionObserver></IntersectionObserver>
+    <BacktoTop></BacktoTop>
+    <Footer></Footer>
+</BaseLayout>

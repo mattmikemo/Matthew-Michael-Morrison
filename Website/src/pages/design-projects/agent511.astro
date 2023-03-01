@@ -26,26 +26,6 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
     justify-content: center;
     margin-bottom: 2rem;
 }
-
- /* Typography Styles */
- h1.project-title {font-weight: 700; margin-inline: 1rem;}
- p.project-intro {font-size: var(--step-1); font-weight: 200; line-height: 1.5;}
- .body {line-height: 1.5; margin: 1rem;}
- .credits-headline  {font-weight: 700;}
- .job-title  {font-weight: 900; font-style: italic;}
- .person-name {margin-top: 0.5rem;}
- .project-preview-title {margin-inline: 1rem; margin-block: 2rem; font-size: var(--step-2); font-weight: 700;}
-
- /* MOBILE */
-@media screen and (max-width: 600px) {
-	main {width: 90%;}
-    h1.project-title {margin: 0; font-size: var(--step-6);}
-    p.project-intro {font-size: var(--step-2);}
-    .credits-headline  {font-weight: 700; font-size: var(--step-2); margin-block: 2rem;}
-    .job-title  {font-weight: 900; font-style: italic; font-size: var(--step-2); margin-bottom: 1rem;}
-    .person-name, .scope-details {font-size: var(--step-2);}
-    .person-name {margin-bottom: 2rem;}
-}   .scope-details {margin-bottom: 4rem;}
  
   </style>
 
@@ -86,15 +66,3 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
     <BacktoTop></BacktoTop>
     <Footer></Footer>
 </BaseLayout>
-
-<script>
-	import Blobity from 'blobity';
-
-const options = { color: 'rgb(180, 180, 180)', dotColor: '#000000', dotSize: '12' };
-new Blobity(options);
-</script>
-
-<script>
-    import Swup from 'swup';
-const swup = new Swup(); // only this line when included with script tag
-</script>
