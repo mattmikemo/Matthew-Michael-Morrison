@@ -15,6 +15,10 @@
     "blobity": "^0.2.1",
     "motion": "^10.15.3",
     "swup": "^2.0.19",
+    "videojs-youtube": "^2.6.1",
     "wheelz": "^1.0.4"
+  },
+  "devDependencies": {
+    "video.js": "^8.0.4"
   }
 }

@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TopNav from "../../components/TopNav.astro";
+import ProjectIntro from "../../components/ProjectIntro.astro";
+import Footer from "../../components/Footer.astro";
+import BacktoTop from "../../components/BacktoTop.astro";
+import ProjectPreview from "../../components/ProjectPreview.astro";
+import IntersectionObserver from "../../components/IntersectionObserver.astro";
+---
+<style>
+    .project-img {width: 100%; margin-block: 1rem;}
+    /* scoped to the component, other H1s on the page remain the same */
+	main {width: 80%; margin: 0 auto;}
+    /* Hero Image Styling */
+    .project-hero {
+    display: flex;
+    background-image: url("/images/Projects/Insert-Coin/Insert-Coin-Project-Hero.jpg");
+    width: 100%;
+    min-height: 50em;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+ 
+/* Image Reveal Styles */
+.image-reveal {position: absolute; width: 300px; height: 400px; top: 50%; left: 50%; pointer-events: none; transform: translate(-50%, -50%); overflow: hidden; opacity: 0; transform: scale(0.8); transition: all .5s ease-out;}
+  </style>
+
+<BaseLayout>
+    <link type="text/css" rel="stylesheet" href="../node_modules/video.js/dist/video-js.min.css" />
+	<TopNav></TopNav>
+    <div class="project-hero" id="nike-hero"></div>
+    
+	<main class="main">
+        <ProjectIntro>
+            <h1 slot="project-title" class="project-title">Geneva Trading</h1>
+            <p slot="project-intro" class="project-intro">Geneva Trading is a leading proprietary trading firm on the cutting edge of fin-tech. They are an entrepreneurial, collaborative organization that seeks to capitalize on opportunities in the financial market by partnering with individuals, teams, and organizations.</p>
+            <p slot="project-intro" class="project-intro">Our team was tasked with expanding their current visual brand and redesigning their website.</p>
+            <h6 slot="project-credits"  class="credits-headline">SCOPE</h6>
+            <h6 slot="project-credits" class="scope-details">-UI/UX Design, Art Direction, Animation</h6>
+            <h6 slot="project-credits"  class="credits-headline">CREDITS</h6>
+            <h6 slot="project-credits" class="job-title">Creative Director</h6>
+            <h6 slot="project-credits" class="person-name">Amy Schwartz</h6>
+            <h6 slot="project-credits" class="job-title">Art Director & Designer</h6>
+            <h6 slot="project-credits" class="person-name">Matthew Michael Morrison</h6>
+        </ProjectIntro>
+
+        <div class="p3"></div>
+            <h3 class="project-heading">Wireframes</h3>
+                <p class="project-copy">After strategy and content sessions with the client, I began experimenting with layouts for the web pages. </p>
+                <img class="project-img fade-in" src="/images/Projects/Geneva-Trading/GT-Wireframes.jpg">
+            <h3 class="project-heading">Branding Exploration and Expansion</h3>
+                <p class="project-copy">Since I was working off of an existing visual brand, I kept a lot of the standards set by Geneva Trading while also searching for opportunities to build upon the existing visual elements. I explored many variations of the UI modules to find what felt the most cohesive with the current brand while also elevating it.</p>
+            <div class="grid-wrapper-min-max py4">
+                    <img class="grid-item fade-in drop-shadow" src="/images/Projects/Geneva-Trading/GT-Design-Modiule-Exploration-1.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/images/Projects/Geneva-Trading/GT-Design-Modiule-Exploration-3.jpg">
+                    <img class="grid-item fade-in drop-shadow" src="/images/Projects/Geneva-Trading/GT-Design-Modiule-Exploration-2.jpg">
+            </div>
+            <h3 class="project-heading">Applying the Visual Expansion to the UI</h3>
+                <p class="project-copy">Finally, after landing on some, it was time to execute it in the UI. I revisited the approved wireframes and began applying the new styles to the different elements on the page. </p>
+                    <!-- <img class="project-img fade-in" src=""> -->
+                    <video
+                    id="my-player"
+                    class="video-js"
+                    width="1280" height="720"
+                    controls
+                    preload="auto"
+                    poster="//vjs.zencdn.net/v/oceans.png"
+                    data-setup='{}'>
+                  <source src="https://drive.google.com/uc?export=download&id=1KLhEj-SFcTCUpw42IUgL1amSZQ4MnYw0" type="video/mp4"></source>
+                  <source src="" type="video/webm"></source>
+                  <source src="" type="video/ogg"></source>
+                </video>
+    </main><main>
+        <ProjectPreview>
+            <h4 slot="project-1" class="project-preview-title"> AT&T Believe Social Campaign</h4>
+            <h4 slot="project-2" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-3" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+            <h4 slot="project-4" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+        </ProjectPreview>
+	</main>
+    <IntersectionObserver></IntersectionObserver>
+    <BacktoTop></BacktoTop>
+    <Footer></Footer>
+</BaseLayout>
+
+<script is:inline src="/node_modules/video.js/dist/video.es.js"></script>
+<script is:inline src="/node_modules/videojs-youtube/dist/Youtube.min.js"></script>

@@ -11,10 +11,11 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
     .project-img {width: 100%; margin-block: 1rem;}
     /* scoped to the component, other H1s on the page remain the same */
 	main {width: 80%; margin: 0 auto;}
+    .Triple-Media-Container {width: 100%; max-width: 1440px; margin: 0 auto;}
     /* Hero Image Styling */
     .project-hero {
     display: flex;
-    background-image: url("/public/images/Projects/nike/Nike-Project-Hero.jpg");
+    background-image: url("/public/images/Projects/loyola/Loyola-Project-Hero.jpg");
     width: 100%;
     min-height: 50em;
     align-self: center;
@@ -74,7 +75,7 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
                 <p class="project-copy">At Loyola, I have contributed to the creation, implementation, build, and perpetuation of our design systems used across all our internal and partner sites and third-party platform integrations. Since its creation and deployment, the University has seen increased traffic across its sites.</p>
                 <p class="project-copy">The goal was to create a standard scalable system of organized, interconnected, reusable components and patterns optimized for accessibility and responsive presentation.</p>
                 <p class="project-copy">It is built on the methodology of Atomic Design. Atomic Design, coined by designer, and author, Brad Frost, breaks the UI of a site down into Atoms, Molecules, Organisms, Templates, and Pages. One can create a mental model that helps construct a UI by breaking a page down into these different elements.</p>
-            <h3 class="project-heading">System Application and Process</h3>
+            <h3 class="project-heading pt4">System Application and Process</h3>
                     <img class="project-img fade-in" src="/public/images/Projects/loyola/atomic-design-diagram.png">
                 <p class="project-copy py4">After an audit, strategy session with the client, and copy development, the building blocks of the design system are used to create wireframes to be presented to the client. Because the pieces of the system are responsive, scalable, and reusable components, they can fit into whatever the appropriate page layout is. All Loyola web pages follow a hierarchy to create a multi-tiered elevated page system.</p>
             
@@ -84,17 +85,62 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
                 <img class="grid-item fade-in" src="/public/images/Projects/loyola/wireframe-for-delegates.jpg">
             </div>
                 <p class="project-copy py4">After the wireframes are approved by the client, the site can be built using the approved wireframes as a basis.</p>
-            <div class="grid-wrapper-min-max">
+            <div class="grid-wrapper-min-max pb4">
                     <img class="grid-item fade-in" src="/public/images/Projects/loyola/loyola-jfrc-homepage.jpg">
                     <img class="grid-item fade-in" src="/public/images/Projects/loyola/loyola-jfrc-student-life.jpg">
                     <img class="grid-item fade-in" src="/public/images/Projects/loyola/loyola-jfrc-tradition.jpg">
-                    <img class="grid-item fade-in" src="/public/images/Projects/loyola/loyola-jfrc-student-experience-team.jpg">
                     <img class="grid-item fade-in" src="/public/images/Projects/loyola/loyola-jfrc-campus.jpg">
             </div>
                 <p class="project-copy">Tied together with our content management system, the template remains a comprehensive and flexible tool for our partners and clients as they maintain their newly built sites. </p>
-            <h3 class="project-heading">Extending the System and Third-party Platforms</h3>
+            <h3 class="project-heading pt4">Extending the System and Third-party Platforms</h3>
                 <p class="project-copy">The UI system code is also easily embeddable and extendable to third-party platforms like exposure.co. This is important as it allows us to extend our visual branding as we reach our audiences on various platforms. We also maintain control over the look, feel, and functionality of our template. Here are some example implementations of the template on Exposure. We’re also continually testing animation with the system while keeping accessibility in mind. </p>
-
+                    <img class="project-img fade-in py3" src="/public/images/Projects/loyola/Calling-UG-Panel.jpg">
+                <div class="drop-shadow video-container">
+                        <video id="my-player" class="video-js py3" width="100%" height="auto" controls preload="auto"
+                        data-setup='{}'>
+                        <source src="https://drive.google.com/uc?export=download&id=1WHN9Yz8ibrNIpf5glAH1joPq7rxAvW5u" type="video/mp4"></source>
+                        <source src="" type="video/webm"></source>
+                        <source src="" type="video/ogg"></source>
+                        </video> 
+                </div>
+                </main><main class="py3">
+                 <div class="grid-wrapper-min-max py3">
+                        <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/loyola/Chatbot-Style-Guide.jpg">
+                        <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/loyola/Chatbot-Interior-Page-Mock.jpg">
+                </div>    
+                <video
+                id="my-player"
+                class="video-js py3"
+                width="100%" height="auto"
+                controls
+                preload="auto"
+                poster="/Images/Projects/loyola/Trading-Card-Video-Cover.jpg"
+                data-setup='{}'>
+              <source src="https://drive.google.com/uc?export=download&id=1KLhEj-SFcTCUpw42IUgL1amSZQ4MnYw0" type="video/mp4"></source>
+              <source src="" type="video/webm"></source>
+              <source src="" type="video/ogg"></source>
+            </video>
+         <div class="Triple-Media-Container flex pt3">
+            <div class="Triple-Left flex-column pr2">
+                <img class="grid-item fade-in drop-shadow" src="/public/images/Projects/loyola/Student-Athletes-Cards.jpg">
+                <!-- <video id="my-player" class="video-js" width="100%" height="auto" controls preload="auto"
+                    data-setup='{}'>
+                    <source src="https://drive.google.com/file/d/1Yg4twzeW2HiJ-1n_WGF5rralxB8YMZ_D/view?usp=sharing" type="video/mp4"></source>
+                    <source src="" type="video/webm"></source>
+                    <source src="" type="video/ogg"></source>
+                </video> -->
+            </div>
+            <div class="Triple-Right">
+                <video id="my-player" class="video-js" width="100%" height="auto" controls preload="auto"
+                data-setup='{}'>
+                <source src="https://drive.google.com/uc?export=download&id=1UCMiVs_xkCDhGBfGHTs4fpIzjr9krHUB" type="video/mp4"></source>
+                <source src="" type="video/webm"></source>
+                <source src="" type="video/ogg"></source>
+                </video>
+            </div>
+        </div> 
+</main>
+    <main>
         <ProjectPreview>
             <h4 slot="project-1" class="project-preview-title"> AT&T Believe Social Campaign</h4>
                 <div slot="project-1" class="image-reveal"><img class="project-preview-img" src="/public/images/Placeholders/Placeholder-1350x1800.jpg"></div>
