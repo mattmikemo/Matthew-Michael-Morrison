@@ -63,8 +63,6 @@ main {
       --speed-fast: 0.8s;
     }
   }
-  
-  /* Setup */
 
   /* Links */
   a.primary-link {font-weight: 700; border-bottom: black solid 2px; margin-inline: 0.5rem; transition: all 0.5s;}
