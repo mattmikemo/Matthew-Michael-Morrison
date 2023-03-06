@@ -1,9 +1,11 @@
 ---
 // Your component script here!
 ---
-<style>
+<style is:global>
     /* scoped to the component, other H1s on the page remain the same */
-    .project-card {width: 100%; margin-block: 3rem;}
+    .project-card {width: 100%; margin-block: 3rem; overflow: hidden;}
+    .project-card img {transition: all 0.25s;}
+    .project-card img:hover {transform: scale(1.125); margin: 2.5rem 0;}
   </style>
   
   <div class="project-card">

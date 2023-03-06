@@ -4,6 +4,7 @@ import TopNav from "../components/TopNav.astro";
 import Footer from "../components/Footer.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import BacktoTop from "../components/BacktoTop.astro";
+import CustomCursor from "../components/CustomCursor.astro";
 
 // import needed modules from npm
 import Wheelz from 'wheelz';
@@ -24,6 +25,16 @@ import Wheelz from 'wheelz';
     #project-1, #project-3, #project-5, #project-7, #project-9 {float: left; clear: right;}
     #project-2, #project-4, #project-6, #project-8, #project-10 {clear: left; float: right;}
     Body#project-2:hover {background-color: aqua;}
+
+    /* MOBILE STYLES */
+    @media screen and (max-width: 500px) {
+        #project-1, #project-3, #project-5, #project-7, #project-9 {float: none;}
+        #project-2, #project-4, #project-6, #project-8, #project-10 {float: none;}
+        .project {width: 100%; transition: all; transform: translateY(200px);}
+        .project h3 {line-height: 1.25;} .project h4 {line-height: 1.5;}
+        .project img {margin-block: 0rem;}
+        main {padding:8rem 0 1rem 0;}
+}
   </style>
 
 <BaseLayout>
@@ -31,7 +42,7 @@ import Wheelz from 'wheelz';
 	<main>
         <div class="project" id="project-1">
         <ProjectCard title="Loyola">
-            <a href="/design-projects/loyola">
+            <a data-blobity-magnetic="false" data-no-blobity href="/design-projects/loyola">
                 <img src="/public/Images/Projects/loyola/Loyola-Project-Cover.jpg">
                     <h3>Loyola University Chicago</h3>
                     <h4>UI/UX, Product Design, Design Systems</h4>
@@ -41,7 +52,7 @@ import Wheelz from 'wheelz';
         </div>
         <div class="project" id="project-2">
         <ProjectCard title="Nike">
-            <a href="/design-projects/nike">
+            <a data-blobity-magnetic="false" data-no-blobity href="/design-projects/nike">
                 <img src="/public/Images/Projects/nike/Nike-Project-Cover.jpg">
                     <h3>Nike Store</h3>
                     <h4>Branding, UI/UX, Product Design, Concept</h4>
@@ -51,7 +62,7 @@ import Wheelz from 'wheelz';
         </div>
         <div class="project" id="project-3">
             <ProjectCard title="Insert-Coin">
-                <a href="/design-projects/insert-coin">
+                <a data-blobity-magnetic="false" data-no-blobity href="/design-projects/insert-coin">
                     <img src="/public/Images/Projects/Insert-Coin/Insert-Coin-Project-Cover.jpg">
                         <h3>SXSW x Insert Coin</h3>
                         <h4>Art Direction, Print Design</h4>
@@ -61,36 +72,37 @@ import Wheelz from 'wheelz';
             </div>
             <div class="project" id="project-4">
             <ProjectCard title="example4">
-                <a href="#/">
-                    <img src="https://via.placeholder.com/1000x560">
-                        <h3>Test Title of Project</h3>
-                        <h4>Added Subtitle for the Project</h4>
+                <a data-blobity-magnetic="false" data-no-blobity href="#/">
+                    <img src="/public/Images/Projects/Geneva-Trading/GT-Project-Cover.jpg">
+                        <h3>Geneva Trading</h3>
+                        <h4>UI/UX, Art Direction</h4>
                             <p> </p>
                 </a>
             </ProjectCard>
             </div>
             <div class="project" id="project-5">
                 <ProjectCard title="Agent-511">
-                    <a href="/design-projects/agent511">
+                    <a data-blobity-magnetic="false" data-no-blobity href="/design-projects/agent511">
                         <img src="/public/Images/Projects/Agent-511/Agent-511-Project-Cover.jpg">
                             <h3>Agent 511</h3>
                             <h4>Web, Art Direction</h4>
                                 <!-- <p> </p> -->
                     </a>
-                </ProjectCard>
+                <!-- </ProjectCard>
                 </div>
                 <div class="project" id="project-6">
                 <ProjectCard title="example6">
-                    <a href="#/">
+                    <a data-blobity-magnetic="false" data-no-blobity href="#/">
                         <img src="https://via.placeholder.com/1000x560">
                             <h3>Test Title of Project</h3>
                             <h4>Added Subtitle for the Project</h4>
                                 <p> </p>
                     </a>
-                </ProjectCard>
+                </ProjectCard> -->
                 </div>
 	</main>
 </BaseLayout>
+<Footer></Footer>
 
 <!-- Motion Page Velocity -->
 <script>
@@ -129,9 +141,16 @@ inView(".project", ({ target }) => {
 });
     //Project 3
     document.getElementById("project-3").addEventListener("mouseover", function() {
-    document.getElementById("body").style.backgroundColor = "#7df997";
+    document.getElementById("body").style.backgroundColor = "#bf63ff";
 });
     document.getElementById("project-3").addEventListener("mouseout", function() {
+    document.getElementById("body").style.backgroundColor = "white";
+});
+    //Project 4
+    document.getElementById("project-4").addEventListener("mouseover", function() {
+    document.getElementById("body").style.backgroundColor = "#7df997";
+});
+    document.getElementById("project-4").addEventListener("mouseout", function() {
     document.getElementById("body").style.backgroundColor = "white";
 });
     //Project 5

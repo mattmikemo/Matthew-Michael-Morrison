@@ -66,6 +66,10 @@ main {
   
   /* Setup */
 
+  /* Links */
+  a.primary-link {font-weight: 700; border-bottom: black solid 2px; margin-inline: 0.5rem; transition: all 0.5s;}
+  a.primary-link:hover {opacity: 0.5;}
+
   /* Copy & Lists */
   p {
     font-family: neue-haas-grotesk-display, sans-serif;
