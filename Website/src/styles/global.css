@@ -27,6 +27,7 @@ main {
 
 /* ----- VIDEO ------ */
   .video-container {width: 100%; max-width: 1440px; margin: 0 auto;}
+
 /* ----- COLORS ----- */
 
 /* ----- TYPOGRAPHY ----- */
@@ -162,6 +163,12 @@ main {
   .project-subhead {font-size: var(--step-2); line-height: 1.5; text-transform: uppercase; font-weight: 600; margin: 2rem auto; width: 69%;}
   .project-copy {font-size: var(--step-1); line-height: 1.75; margin: 2rem auto; letter-spacing: 1px; width: 69%;}
 
+  @media screen and (max-width: 500px) {
+    .project-heading {font-size: var(--step-4); line-height: 1.5; margin: 2rem 0; width: 100%;}
+    .project-subhead {font-size: var(--step-2); line-height: 1.5; text-transform: uppercase; font-weight: 600; margin: 2rem 0; width: 100%;}
+    .project-copy {font-size: var(--step-1); line-height: 1.75; margin: 2rem 0; letter-spacing: 1px; width: 100%;}
+  }
+
   /* Intro and Credit Styles */
  h1.project-title {font-weight: 700; margin-inline: 1rem; font-size: var(--step-5);}
  p.project-intro {font-size: var(--step-1); font-weight: 300; line-height: 1.5; letter-spacing: 2px;}
@@ -178,5 +185,12 @@ main {
     p.project-intro {font-size: var(--step-2);}
     .credits-headline  {font-weight: 700; font-size: var(--step-2); margin-block: 1.75rem;}
     .job-title  {font-weight: 500; font-style: italic; font-size: var(--step-2);}
-    .person-name, .scope-details {font-size: var(--step-2);}
+    .person-name, .scope-details {font-size: var(--step-2); line-height: 1.5;}
+}
+
+/* Global Project Styles */
+
+@media screen and (max-width: 500px) {
+  .project-hero {min-height: 25em;}
+  .py4 { padding-top: var(--space-2); padding-bottom: var(--space-2) }
 }
