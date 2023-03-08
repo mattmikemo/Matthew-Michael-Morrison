@@ -26,6 +26,9 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
     justify-content: center;
     margin-bottom: 2rem;
 }
+
+/* Image Reveal Styles */
+.image-reveal {position: absolute; width: 500px; height: 280px; top: 50%; left: 50%; pointer-events: none; transform: translate(-50%, -50%); overflow: hidden; opacity: 0; transform: scale(0.8); transition: all .5s ease-out; mix-blend-mode: difference;}
  
   </style>
 
@@ -56,10 +59,14 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
                 <img class="project-img fade-in" src="/Images/Projects/Agent-511/Agent-511-Homepage-Design.jpg">
 
         <ProjectPreview>
-            <h4 slot="project-1" class="project-preview-title"> AT&T Believe Social Campaign</h4>
-            <h4 slot="project-2" class="project-preview-title"> Lorem Ipsum Project Title</h4>
-            <h4 slot="project-3" class="project-preview-title"> Lorem Ipsum Project Title</h4>
-            <h4 slot="project-4" class="project-preview-title"> Lorem Ipsum Project Title</h4>
+                    <h4 slot="project-1" class="project-preview-title">Loyola University Marketing</h4>
+                        <div slot="project-1" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/loyola/Loyola-Project-Cover.jpg"></div>
+                    <h4 slot="project-2" class="project-preview-title">Insert Coin x SXSW</h4>
+                       <div slot="project-2" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/Insert-Coin/Insert-Coin-Project-Cover.jpg"></div>
+                    <h4 slot="project-3" class="project-preview-title">Geneva Trading</h4>
+                        <div slot="project-3" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/Geneva-Trading/GT-Project-Cover.jpg"></div>
+                    <h4 slot="project-4" class="project-preview-title">Nike Store Concept</h4>
+                        <div slot="project-4" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/nike/Nike-Project-Cover.jpg"></div>
         </ProjectPreview>
 	</main>
     <IntersectionObserver></IntersectionObserver>
