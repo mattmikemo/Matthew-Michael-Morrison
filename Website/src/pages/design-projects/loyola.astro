@@ -12,50 +12,7 @@ const url3 = '/design-projects/geneva-trading';
 const url4 = '/design-projects/agent511';
 ---
 <style>
-    .project-img {width: 100%; margin-block: 1rem;}
-    /* scoped to the component, other H1s on the page remain the same */
-	main {width: 80%; margin: 0 auto;}
-    .Triple-Media-Container {width: 100%; max-width: 1440px; margin: 0 auto;}
-    /* Hero Image Styling */
-    .project-hero {
-    display: flex;
-    background-image: url("/Images/Projects/loyola/Loyola-Project-Hero.jpg");
-    width: 100%;
-    min-height: 50em;
-    align-self: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-/* Image Reveal Styles */
-.image-reveal {
-	position: absolute;
-	width: 500px;
-	height: 280px;
-	top: 50%;
-	left: 50%;
-	pointer-events: none;
-	transform: translate(-50%, -50%);
-	overflow: hidden;
-	opacity: 0;
-	transform: scale(0.8);
-	transition: all .5s ease-out;
-}
-
- /* MOBILE */
-@media screen and (max-width: 600px) {
-	main {width: 90%;}
-    h1.project-title {margin: 0; font-size: var(--step-6);}
-    p.project-intro {font-size: var(--step-2);}
-    .credits-headline  {font-weight: 700; font-size: var(--step-2); margin-block: 1.75rem;}
-    .job-title  {font-weight: 500; font-style: italic; font-size: var(--step-2);}
-    .person-name, .scope-details {font-size: var(--step-2);}
-}
- 
+    .project-hero {background-image: url("/Images/Projects/loyola/Loyola-Project-Hero.jpg");}
   </style>
 
 <BaseLayout>

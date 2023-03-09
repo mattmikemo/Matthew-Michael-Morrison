@@ -7,15 +7,17 @@ const {url1, url2, url3, url4} = Astro.props
     #project-preview {padding-top: 5rem;}
     .preview-item {border-bottom: solid black 1px;} #project-item-4 {border-bottom: none;}
     #project-preview h3 {margin-inline: 1rem; margin-bottom: 5rem; font-size: var(--step-4);}
-    .preview-link {display: flex; z-index: 10000; mix-blend-mode: difference; transition: all 0.5s;} 
+    .preview-link {display: flex; z-index: 10000; transition: all 0.5s;} 
     .preview-link:hover {scale: 1.05; translate: 2% 0; opacity: 0.9;}
 
     /* Project Image Styles */
-    .image-reveal {position: absolute; top: 0; left: 0; width: 1000px; height: 560px; opacity: 0; pointer-events: none; transform: translate(0, -300px); transition: all 0.5s; z-index: -5;}
-    .project-preview-img img {opacity: 0%; position: absolute; top: -100%; pointer-events: none; user-select: none; transition: all; mix-blend-mode: difference; z-index: -50;}
+    .image-reveal {position: absolute; width: 500px; height: 280px; top: 50%; left: 50%; pointer-events: none; transform: translate(-50%, -50%); overflow: hidden; opacity: 0; transform: scale(0.8); transition: all .5s ease-out; mix-blend-mode: difference;}
+    .project-preview-img img {opacity: 0%; position: absolute; top: -100%; pointer-events: none; user-select: none; transition: all; z-index: -50;}
 
     /* MOBILE STYLES */
     @media screen and (max-width: 500px) {
+        .project-preview-title {line-height: 1.5;}
+        .image-reveal {left: 0; width: 250px; height: 140px;}
         #project-preview {padding-top: 2rem;}
         #project-preview h3 {margin: 0 0 1rem 0; font-size: var(--step-4); line-height: 1.5;}
 }

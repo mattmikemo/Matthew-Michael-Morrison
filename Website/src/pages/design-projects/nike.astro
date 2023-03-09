@@ -12,27 +12,10 @@ const url3 = '/design-projects/geneva-trading';
 const url4 = '/design-projects/agent511';
 ---
 <style>
-    .project-img {width: 100%; margin-block: 1rem;}
-    /* scoped to the component, other H1s on the page remain the same */
-	main {width: 80%; margin: 0 auto;}
-    /* Hero Image Styling */
     .project-hero {
-    display: flex;
     background-image: url("/Images/Projects/nike/Nike-Project-Hero.jpg");
-    width: 100%;
-    min-height: 50em;
-    align-self: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
 }
-
-/* Image Reveal Styles */
-.image-reveal {position: absolute; width: 500px; height: 280px; top: 50%; left: 50%; pointer-events: none; transform: translate(-50%, -50%); overflow: hidden; opacity: 0; transform: scale(0.8); transition: all .5s ease-out; mix-blend-mode: difference;}
-  </style>
+</style>
 
 <BaseLayout>
 	<TopNav></TopNav>
@@ -61,7 +44,7 @@ const url4 = '/design-projects/agent511';
             </div>
             <img class="project-img fade-in" src="/Images/Projects/nike/Nike-Shopping-Page.jpg">
 
-        <ProjectPreview url1={url1} url2={url2} url3={url3} url4={url4}>
+       <ProjectPreview url1={url1} url2={url2} url3={url3} url4={url4}>
             <h4 slot="project-1" class="project-preview-title">Loyola University Marketing</h4>
                 <div slot="project-1" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/loyola/Loyola-Project-Cover.jpg"></div>
             <h4 slot="project-2" class="project-preview-title">Insert Coin x SXSW</h4>

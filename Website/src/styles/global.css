@@ -190,7 +190,25 @@ main {
 
 /* Global Project Styles */
 
+    .project-img {width: 100%; margin-block: 1rem;}
+    /* scoped to the component, other H1s on the page remain the same */
+	main {width: 80%; margin: 0 auto;}
+    /* Hero Image Styling */
+    .project-hero {
+    display: flex;
+    width: 100%;
+    min-height: 50em;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 500px) {
   .project-hero {min-height: 25em;}
+  .Triple-Media-Container {flex-direction: column;} .Triple-Left {padding: 0;}
   .py4 { padding-top: var(--space-2); padding-bottom: var(--space-2) }
 }
