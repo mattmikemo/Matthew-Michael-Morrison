@@ -66,8 +66,8 @@ main {
   }
 
   /* Links */
-  a.primary-link {font-weight: 700; border-bottom: black solid 2px; margin-inline: 0.5rem; transition: all 0.5s;}
-  a.primary-link:hover {opacity: 0.5;}
+  a.primary-link {font-weight: 700; border-bottom: black solid 2px; margin-inline: 0.5rem; transition: all 0.5s; position: relative;}
+  a.primary-link:hover {mix-blend-mode: difference; z-index: 500; color: whitesmoke;}
 
   /* Copy & Lists */
   p {
@@ -175,7 +175,7 @@ main {
  .body {line-height: 1.5; margin: 1rem;}
  .credits-headline  {font-weight: 700;}
  .job-title  {font-weight: 500; font-style: italic;}
- .person-name {margin-top: 0.5rem;}
+ .person-name {margin-top: 0.5rem; font-weight: 700;}
  .project-preview-title {margin-inline: 1rem; margin-block: 2rem; font-size: var(--step-2); font-weight: 700;}
 
   /* MOBILE Type Styles*/

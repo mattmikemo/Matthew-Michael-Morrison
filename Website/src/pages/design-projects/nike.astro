@@ -6,6 +6,10 @@ import Footer from "../../components/Footer.astro";
 import BacktoTop from "../../components/BacktoTop.astro";
 import ProjectPreview from "../../components/ProjectPreview.astro";
 import IntersectionObserver from "../../components/IntersectionObserver.astro";
+const url1 = '/design-projects/loyola';
+const url2 = '/design-projects/insert-coin';
+const url3 = '/design-projects/geneva-trading';
+const url4 = '/design-projects/agent511';
 ---
 <style>
     .project-img {width: 100%; margin-block: 1rem;}
@@ -57,7 +61,7 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
             </div>
             <img class="project-img fade-in" src="/Images/Projects/nike/Nike-Shopping-Page.jpg">
 
-        <ProjectPreview>
+        <ProjectPreview url1={url1} url2={url2} url3={url3} url4={url4}>
             <h4 slot="project-1" class="project-preview-title">Loyola University Marketing</h4>
                 <div slot="project-1" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/loyola/Loyola-Project-Cover.jpg"></div>
             <h4 slot="project-2" class="project-preview-title">Insert Coin x SXSW</h4>

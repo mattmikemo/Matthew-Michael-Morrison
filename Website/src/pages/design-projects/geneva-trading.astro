@@ -6,6 +6,10 @@ import Footer from "../../components/Footer.astro";
 import BacktoTop from "../../components/BacktoTop.astro";
 import ProjectPreview from "../../components/ProjectPreview.astro";
 import IntersectionObserver from "../../components/IntersectionObserver.astro";
+const url1 = '/design-projects/loyola';
+const url2 = '/design-projects/insert-coin';
+const url3 = '/design-projects/nike';
+const url4 = '/design-projects/agent511';
 ---
 <style>
     .project-img {width: 100%; margin-block: 1rem;}
@@ -27,7 +31,7 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
 }
  
 /* Image Reveal Styles */
-.image-reveal {position: absolute; width: 500px; height: 280px; top: 50%; left: 50%; pointer-events: none; transform: translate(-50%, -50%); overflow: hidden; opacity: 0; transform: scale(0.8); transition: all .5s ease-out;}
+.image-reveal {position: absolute; width: 500px; height: px; top: 50%; left: 50%; pointer-events: none; transform: translate(-50%, -50%); overflow: hidden; opacity: 0; transform: scale(0.8); transition: all .5s ease-out;}
   </style>
 
 <BaseLayout>
@@ -40,9 +44,9 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
             <h1 slot="project-title" class="project-title">Geneva Trading</h1>
             <p slot="project-intro" class="project-intro">Geneva Trading is a leading proprietary trading firm on the cutting edge of fin-tech. They are an entrepreneurial, collaborative organization that seeks to capitalize on opportunities in the financial market by partnering with individuals, teams, and organizations.</p>
             <p slot="project-intro" class="project-intro">Our team was tasked with expanding their current visual brand and redesigning their website.</p>
-            <h6 slot="project-credits"  class="credits-headline">SCOPE</h6>
+            <h6 slot="project-credits" class="credits-headline">SCOPE</h6>
             <h6 slot="project-credits" class="scope-details">-UI/UX Design, Art Direction, Animation</h6>
-            <h6 slot="project-credits"  class="credits-headline">CREDITS</h6>
+            <h6 slot="project-credits" class="credits-headline">CREDITS</h6>
             <h6 slot="project-credits" class="job-title">Creative Director</h6>
             <h6 slot="project-credits" class="person-name">Amy Schwartz</h6>
             <h6 slot="project-credits" class="job-title">Art Director & Designer</h6>
@@ -80,7 +84,7 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
                 <img class="project-img fade-in drop-shadow" src="/Images/Projects/Geneva-Trading/GT-Sample-Page.jpg">
     </main>
     <main>
-        <ProjectPreview>
+        <ProjectPreview url1={url1} url2={url2} url3={url3} url4={url4}>
             <h4 slot="project-1" class="project-preview-title">Loyola University Marketing</h4>
                 <div slot="project-1" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/loyola/Loyola-Project-Cover.jpg"></div>
             <h4 slot="project-2" class="project-preview-title">Insert Coin x SXSW</h4>

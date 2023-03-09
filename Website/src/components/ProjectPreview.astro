@@ -1,5 +1,5 @@
 ---
-const {url} = Astro.props
+const {url1, url2, url3, url4} = Astro.props
 ---
 <style is:global>
     /* scoped to the component, other H1s on the page remain the same */
@@ -25,10 +25,10 @@ const {url} = Astro.props
   <section id="project-preview">
     <div class="project-preview-wrapper">
         <h3>See More Projects</h3>
-        <div class="preview-item" id="project-item-1"><a data-no-blobity class="preview-link" href="{url}"><slot name="project-1"></slot></a></div>
-        <div class="preview-item" id="project-item-2"><a data-no-blobity class="preview-link" href="{url}"><slot name="project-2"></slot></a></div>
-        <div class="preview-item" id="project-item-3"><a data-no-blobity class="preview-link" href="{url}"><slot name="project-3"></slot></a></div>
-        <div class="preview-item" id="project-item-4"><a data-no-blobity class="preview-link" href="{url}"><slot name="project-4"></slot></a></div>
+        <div class="preview-item" id="project-item-1"><a data-no-blobity class="preview-link" href={url1}><slot name="project-1"></slot></a></div>
+        <div class="preview-item" id="project-item-2"><a data-no-blobity class="preview-link" href={url2}><slot name="project-2"></slot></a></div>
+        <div class="preview-item" id="project-item-3"><a data-no-blobity class="preview-link" href={url3}><slot name="project-3"></slot></a></div>
+        <div class="preview-item" id="project-item-4"><a data-no-blobity class="preview-link" href={url4}><slot name="project-4"></slot></a></div>
     </div>
   </section>
 

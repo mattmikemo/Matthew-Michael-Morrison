@@ -6,6 +6,10 @@ import Footer from "../../components/Footer.astro";
 import BacktoTop from "../../components/BacktoTop.astro";
 import ProjectPreview from "../../components/ProjectPreview.astro";
 import IntersectionObserver from "../../components/IntersectionObserver.astro";
+const url1 = '/design-projects/loyola';
+const url2 = '/design-projects/nike';
+const url3 = '/design-projects/geneva-trading';
+const url4 = '/design-projects/agent511';
 ---
 <style>
     .project-img {width: 100%; margin-block: 1rem;}
@@ -51,7 +55,7 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
         <div class="p3"></div>
             <h3 class="project-heading">My Hypothesis</h3>
                 <p class="project-copy">One of the pros of working on such iconic brands and franchises is you can take a minimal approach in your art direction with less risk. I thought a “less is more” approach would work well with easily recognizable elements. Having also played the games myself, I know there are many memorable spoken lines from games such as NBA Jam and Mortal Kombat. There was an opportunity here to go big and bold with typography.</p>
-                <p class="project-copy">Other distinguishable characteristics of early 90s games were pixel art and the technology that drove those games. Showcasing pixel art, which has grown into its own sub-genre on game marketplaces such as Steam, is a quick and fun way to grab the audience’s attention. Color also plays a huge role because the technology of arcade CRT monitors creates a chromatic aberration visual effect with the graphics.</p>
+                <p class="project-copy">Other distinguishable characteristics of early 90s games were pixel art and the technology that drove those games. Showcasing pixel art, which has grown into its own sub-genre on game marketplaces such as Steam, is a quick and fun way to grab the audience’s attention. Color also plays a huge role because the technology of arcade CRT monitors creates a <a class="primary-link" href="https://www.adobe.com/creativecloud/photography/discover/chromatic-aberration.html">chromatic aberration</a> visual effect with the graphics.</p>
             <h3 class="project-heading">Putting it into Practice</h3>
                 <p class="project-copy">I started by assessing what assets were available to us that I could experiment with. We were provided with some sprites that were used in the games. I began placing those in rough layouts testing them against my hypothesis of letting the recognizability of the characters speak for itself. While it was a good start. I felt as if things could be pushed further.</p>
             <div class="grid-wrapper-min-max py4">
@@ -104,7 +108,7 @@ import IntersectionObserver from "../../components/IntersectionObserver.astro";
                     <img class="project-img fade-in" src="/Images/Projects/Insert-Coin/heating-up-final-poster-spread.jpg">
                     <img class="project-img fade-in" src="/Images/Projects/Insert-Coin/boomshakalaka-final-poster-spread.jpg">
                     <img class="project-img fade-in" src="/Images/Projects/Insert-Coin/Outdoor-Posters-Mockup.jpg">
-                    <ProjectPreview>
+                    <ProjectPreview url1={url1} url2={url2} url3={url3} url4={url4}>
                         <h4 slot="project-1" class="project-preview-title">Loyola University Marketing</h4>
                             <div slot="project-1" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/loyola/Loyola-Project-Cover.jpg"></div>
                         <h4 slot="project-2" class="project-preview-title">Nike Store Concept</h4>
