@@ -11,11 +11,19 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^2.1.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vidstack/react": "^0.4.2",
+    "@vime/core": "^5.4.0",
     "astro": "^1.6.11",
     "blobity": "^0.2.1",
     "motion": "^10.15.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "swup": "^2.0.19",
     "videojs-youtube": "^2.6.1",
+    "vidstack": "^0.4.2",
     "wheelz": "^1.0.4"
   },
   "devDependencies": {

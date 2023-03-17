@@ -40,6 +40,17 @@ import Wheelz from 'wheelz';
 <BaseLayout>
 	<TopNav></TopNav>
 	<main>
+            
+        <div class="project" id="project-6">
+            <ProjectCard title="The Players' Press">
+                <a data-blobity-magnetic="false" data-no-blobity href="/design-projects/players-press">
+                    <img src="/Images/Projects/Players-Press/PP-Project-Cover.gif">
+                        <h3>The Players' Press</h3>
+                        <h4>Branding, Animation, Art Direction, Concept</h4>
+                                <p> </p>
+                    </a>
+                </ProjectCard>
+                </div>
         <div class="project" id="project-1">
         <ProjectCard title="Loyola">
             <a data-blobity-magnetic="false" data-no-blobity href="/design-projects/loyola">
@@ -88,8 +99,9 @@ import Wheelz from 'wheelz';
                             <h4>Web, Art Direction</h4>
                                 <!-- <p> </p> -->
                     </a>
-                <!-- </ProjectCard>
+                </ProjectCard>
                 </div>
+                <!--
                 <div class="project" id="project-6">
                 <ProjectCard title="example6">
                     <a data-blobity-magnetic="false" data-no-blobity href="#/">
@@ -98,8 +110,8 @@ import Wheelz from 'wheelz';
                             <h4>Added Subtitle for the Project</h4>
                                 <p> </p>
                     </a>
-                </ProjectCard> -->
-                </div>
+                </ProjectCard>
+                </div> -->
 	</main>
 </BaseLayout>
 <Footer></Footer>
@@ -158,6 +170,13 @@ inView(".project", ({ target }) => {
     document.getElementById("body").style.backgroundColor = "#0085ff";
 });
     document.getElementById("project-5").addEventListener("mouseout", function() {
+    document.getElementById("body").style.backgroundColor = "white";
+});
+    //Project 6
+    document.getElementById("project-6").addEventListener("mouseover", function() {
+    document.getElementById("body").style.backgroundColor = "#CCCCCC";
+});
+    document.getElementById("project-6").addEventListener("mouseout", function() {
     document.getElementById("body").style.backgroundColor = "white";
 });
 </script>

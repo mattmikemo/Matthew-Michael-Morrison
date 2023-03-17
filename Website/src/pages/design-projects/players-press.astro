@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TopNav from "../../components/TopNav.astro";
+import ProjectIntro from "../../components/ProjectIntro.astro";
+import Footer from "../../components/Footer.astro";
+import BacktoTop from "../../components/BacktoTop.astro";
+import ProjectPreview from "../../components/ProjectPreview.astro";
+import IntersectionObserver from "../../components/IntersectionObserver.astro";
+import Video from '../../components/Video.jsx';
+const url1 = '/design-projects/loyola';
+const url2 = '/design-projects/insert-coin';
+const url3 = '/design-projects/geneva-trading';
+const url4 = '/design-projects/nike';
+---
+<style>
+    .project-hero {background-image: url("/Images/Projects/Players-Press/PP-Project-Hero.jpg");}
+ </style>
+
+<BaseLayout>
+	<TopNav></TopNav>
+    <div class="project-hero" id="nike-hero"></div>
+    
+	<main class="main">
+        <ProjectIntro>
+            <h1 slot="project-title" class="project-title">The Players' Press</h1>
+            <p slot="project-intro" class="project-intro">The Players' Press is a (fictional) sports news media company that provides athletes with a platform to connect directly with their fans, on their own terms, in their own words. The Players' Press publishes first-person articles from athletes, providing unique insight into their lived experiences.</p>
+            <h6 slot="project-credits"  class="credits-headline">SCOPE</h6>
+            <h6 slot="project-credits" class="scope-details">-Branding, Art Direction, Merch and Marketing Collateral Design, Motion Graphics</h6>
+            <h6 slot="project-credits"  class="credits-headline">CREDITS</h6>
+            <h6 slot="project-credits" class="job-title">Art Director, Graphic & Motion Designer</h6>
+            <h6 slot="project-credits" class="person-name">Matthew Michael Morrison</h6>
+        </ProjectIntro>
+
+    <div class="p3"></div>
+
+<Video client:load />
+
+    <h3 class="project-heading">Visual Identity</h3>
+        <p class="project-copy">The design is clean and minimalist. It makes use negative space whenever possible and features simple typography choices. The gradient used represents a collection of unique and powerful voices. It’s  a visual representation and celebration of diversity of thought, identity, and lived experience.</p>
+            <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Half-Logo-Hotel.jpg">
+            <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Screens-Set.jpg">
+            <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Social-Posts.jpg">
+            <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Social-Ads-1.jpg">
+            <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Social-Ads-2.jpg">
+            <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Posters.jpg">
+            <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Street-Poster-Ad.jpg">
+            <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Business-Card.jpg">
+        <div class="grid-wrapper-min-max pb4">
+                <img class="grid-item fade-in" src="/Images/Projects/Players-Press/PP-Shorts-Pink.jpg">
+                <img class="grid-item fade-in" src="/Images/Projects/Players-Press/PP-Sweatshirt-Blue-Acid.jpg">
+                <img class="grid-item fade-in" src="/Images/Projects/Players-Press/PP-Shorts-Light-Blue.jpg">
+        </div>
+            <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Winter-Hat.jpg">
+        <ProjectPreview url1={url1} url2={url2} url3={url3} url4={url4}>
+                    <h4 slot="project-1" class="project-preview-title">Loyola University Marketing</h4>
+                        <div slot="project-1" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/loyola/Loyola-Project-Cover.jpg"></div>
+                    <h4 slot="project-2" class="project-preview-title">Insert Coin x SXSW</h4>
+                       <div slot="project-2" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/Insert-Coin/Insert-Coin-Project-Cover.jpg"></div>
+                    <h4 slot="project-3" class="project-preview-title">Geneva Trading</h4>
+                        <div slot="project-3" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/Geneva-Trading/GT-Project-Cover.jpg"></div>
+                    <h4 slot="project-4" class="project-preview-title">Nike Store Concept</h4>
+                        <div slot="project-4" class="image-reveal"><img class="project-preview-img" src="/Images/Projects/nike/Nike-Project-Cover.jpg"></div>
+        </ProjectPreview>
+	</main>
+    <IntersectionObserver></IntersectionObserver>
+    <BacktoTop></BacktoTop>
+    <Footer></Footer>
+</BaseLayout>

@@ -174,6 +174,7 @@ main {
  p.project-intro {font-size: var(--step-1); font-weight: 300; line-height: 1.5; letter-spacing: 2px;}
  .body {line-height: 1.5; margin: 1rem;}
  .credits-headline  {font-weight: 700;}
+ .scope-details {line-height: 1.75;}
  .job-title  {font-weight: 500; font-style: italic;}
  .person-name {margin-top: 0.5rem; font-weight: 700;}
  .project-preview-title {margin-inline: 1rem; margin-block: 2rem; font-size: var(--step-2); font-weight: 700;}
@@ -186,6 +187,7 @@ main {
     .credits-headline  {font-weight: 700; font-size: var(--step-2); margin-block: 1.75rem;}
     .job-title  {font-weight: 500; font-style: italic; font-size: var(--step-2);}
     .person-name, .scope-details {font-size: var(--step-2); line-height: 1.5;}
+    .scope-details {line-height: 1.5;}
 }
 
 /* Global Project Styles */
