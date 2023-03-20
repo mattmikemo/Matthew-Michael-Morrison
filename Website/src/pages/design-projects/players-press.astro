@@ -6,11 +6,12 @@ import Footer from "../../components/Footer.astro";
 import BacktoTop from "../../components/BacktoTop.astro";
 import ProjectPreview from "../../components/ProjectPreview.astro";
 import IntersectionObserver from "../../components/IntersectionObserver.astro";
-import Video from '../../components/Video.jsx';
+import Video from "../../components/Video";
 const url1 = '/design-projects/loyola';
 const url2 = '/design-projects/insert-coin';
 const url3 = '/design-projects/geneva-trading';
 const url4 = '/design-projects/nike';
+
 ---
 <style>
     .project-hero {background-image: url("/Images/Projects/Players-Press/PP-Project-Hero.jpg");}
@@ -33,7 +34,11 @@ const url4 = '/design-projects/nike';
 
     <div class="p3"></div>
 
-<Video client:load />
+<Video client:load
+autoplay="true"
+source="https://vz-41299fb0-709.b-cdn.net/5f792f15-da62-4b82-9649-3ab8312f40fc/play_720p.mp4" 
+poster="https://vz-41299fb0-709.b-cdn.net/5f792f15-da62-4b82-9649-3ab8312f40fc/thumbnail.jpg"
+/>
 
     <h3 class="project-heading">Visual Identity</h3>
         <p class="project-copy">The design is clean and minimalist. It makes use negative space whenever possible and features simple typography choices. The gradient used represents a collection of unique and powerful voices. It’s  a visual representation and celebration of diversity of thought, identity, and lived experience.</p>
@@ -42,6 +47,11 @@ const url4 = '/design-projects/nike';
             <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Social-Posts.jpg">
             <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Social-Ads-1.jpg">
             <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Social-Ads-2.jpg">
+<Video client:load
+autoplay="false"
+source="https://vz-41299fb0-709.b-cdn.net/e5016de2-a773-4ccb-9e7f-8934198e19db/play_720p.mp4" 
+poster="https://vz-41299fb0-709.b-cdn.net/e5016de2-a773-4ccb-9e7f-8934198e19db/thumbnail.jpg"
+/>
             <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Posters.jpg">
             <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Street-Poster-Ad.jpg">
             <img class="project-img fade-in" src="/Images/Projects/Players-Press/PP-Business-Card.jpg">
