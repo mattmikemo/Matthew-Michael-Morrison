@@ -1,19 +1,36 @@
+import 'vidstack/styles/defaults.css'
 
-import React from "react";
-import 'vidstack/styles/defaults.css';
-import { MediaOutlet, MediaPlayer } from '@vidstack/react';
+import { defineCustomElements } from 'vidstack/elements';
 
-export default function Video({source, poster}) {
-  const [autoplay, loop] = "true";
-  return <MediaPlayer
-  autoplay={autoplay}
-  loop={loop}
-  src={source}
-  poster={poster}
-  controls
+defineCustomElements();
+// the `.js` extension is required.
+import 'vidstack/define/media-player.js';
+
+<media-player
+  title="Sprite Fight"
+  src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
+  poster="https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/thumbnail.webp?time=268&width=980"
+  thumbnails="https://media-files.vidstack.io/sprite-fight/thumbnails.vtt"
+  aspect-ratio="16/9"
+  crossorigin
 >
-  {/* ^ remove `controls` attribute if you're designing a custom UI */}
-  <MediaOutlet />
-</MediaPlayer>
-;
-}
+  <media-outlet>
+    <media-poster
+      alt="Girl walks into sprite gnomes around her friend on a campfire in danger!"
+    ></media-poster>
+   <track
+      src="https://media-files.vidstack.io/sprite-fight/subs/english.vtt"
+      label="English"
+      srclang="en-US"
+      kind="subtitles"
+      default
+    />
+    <track
+      src="https://media-files.vidstack.io/sprite-fight/chapters.vtt"
+      srclang="en-US"
+      kind="chapters"
+      default
+    />
+  </media-outlet>
+  <media-community-skin></media-community-skin>
+</media-player>
