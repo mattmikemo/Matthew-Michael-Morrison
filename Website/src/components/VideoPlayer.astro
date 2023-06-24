@@ -1,7 +1,6 @@
 ---
 const { VideoSource, VideoTitle, VideoPoster, VideoType, VideoAuto, VideoLoop } = Astro.props;
 import 'vidstack/styles/defaults.css'
-import 'vidstack/styles/community-skin/video.css'
 
 import { defineCustomElements } from 'vidstack/elements';
 
@@ -26,7 +25,6 @@ defineCustomElements();
    
 
   </media-outlet>
-  <media-community-skin></media-community-skin>
 </media-player>
 
 <script>
